@@ -21,6 +21,11 @@ export class HeaderComponent implements OnInit {
       id: 3,
       name: "Team",
       route: "team"
+    },
+    {
+      id: 3,
+      name: "Contact",
+      route: "contact"
     }
   ]
 

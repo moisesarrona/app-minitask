@@ -1,27 +1,22 @@
-# AppMinitask
+# app-minitask
+This is app create to consume the api api-minitask and organize your tasks.  
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.2.
+Version 0.1.7  
+Description: Build module task
 
-## Development server
+## Technologies
+- Angular 13.3.0
+- rxjs 7.5.0
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Dependencies
+- Bootstrap 5.0.2
 
-## Code scaffolding
+## Requirements
+- Node 16.14.2
+- Cli 13.3.0
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### About me 👨‍💻
+Hi, my name is Moises Arrona I'm creator this api, follow me in for more projects
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- [GitHub/moisesarrona](https://github.com/mosesarrona)
+- [Instagram/moisesarrona](https://www.instagram.com/moisesarrona/)

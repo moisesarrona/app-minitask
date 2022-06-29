@@ -2,12 +2,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { LandingRoutingModule } from './landing-routing.module';
-import { FooterComponent } from './shared/footer/footer.component';
-import { HeaderComponent } from './shared/header/header.component';
 import { FullComponent } from './shared/full/full.component';
 import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { TeamComponent } from './components/team/team.component';
+import { FooterComponent } from './shared/full/footer/footer.component';
+import { HeaderComponent } from './shared/full/header/header.component';
 
 
 @NgModule({

@@ -1,79 +1,41 @@
-<section class="vh-100">
-    <div class="row justify-content-center align-items-center h-100 w-100">
-        <div class="col-6 text-center">
-            <span class="text-uppercase small">our app</span>
-            <h1>Minitask</h1>
-            <p>Hi, human, I'm Moises Arrona and I'm software engineer, this is my app to organize task</p>
-            <a class="btn btn-primary">
-                Go!
-            </a>
-        </div>
-    </div>
-</section>
+<ng-template ngFor let-section [ngForOf]="dataSection" let-i="index">
+    <ng-template [ngIf]="section.id == 1" [ngIfElse]="noneSectionMain">
+        <section class="vh-100">
+            <div class="row justify-content-center align-items-center h-100 w-100">
+                <div class="col-5 text-center">
+                    <span class="text-uppercase small">{{ section.subtitle }}</span>
+                    <h1>{{ section.title }}</h1>
+                    <p>{{ section.description }}</p>
+                    <a class="btn btn-primary">
+                        {{ section.button.text }}
+                    </a>
+                </div>
+            </div>
+        </section>
+    </ng-template>
 
-<section>
-    <div class="container py-5">
-        <div class="row justify-content-start text-start">
-            <div class="col-md-5">
-                <span class="text-uppercase small">You read</span>
-                <h3>Know more...</h3>
-                <p>Well, this app was created to register my activities en all day, and know to the progress each task, and sorry my english so bad</p>
+    <ng-template #noneSectionMain>
+        <section>
+            <div class="container py-5">
+                <div [ngClass]="{'row justify-content-start text-start': section.id%2 == 0, 'row justify-content-end text-end': section.id%2 != 0}">
+                    <div class="col-md-5">
+                        <span class="text-uppercase small">{{ section.subtitle }}</span>
+                        <h3>{{ section.title }}</h3>
+                        <p>{{ section.description }}</p>
+                    </div>
+                </div>
+        
+                <div class="row text-center py-5" 
+                    *ngIf="section.items">
+                    <div class="col-md-4" 
+                        *ngFor="let item of section.items">
+                        <h5>{{ item.title }}</h5>
+                        <h4>
+                            <i class="{{ item.icon }}"></i>
+                        </h4>
+                    </div>
+                </div>
             </div>
-        </div>
-
-        <div class="row text-center py-5">
-            <div class="col-md-4">
-                <h5>Organize</h5>
-                <h4>
-                    <i class="bi bi-sort-alpha-down"></i>
-                </h4>
-            </div>
-            <div class="col-md-4">
-                <h5>Time</h5>
-                <h4>
-                    <i class="bi bi-alarm"></i>
-                </h4>
-            </div>
-            <div class="col-md-4">
-                <h5>Practice</h5>
-                <h4>
-                    <i class="bi bi-play-btn"></i>
-                </h4>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section>
-    <div class="container py-5">
-        <div class="row justify-content-end text-end">
-            <div class="col-md-5">
-                <span class="text-uppercase small">You read more</span>
-                <h3>More data</h3>
-                <p>Human, this app is still under development </p>
-                <p>I write code for this project, in fact the source code is on GitHub, give me one start or write code, your decition</p>
-            </div>
-        </div>
-
-        <div class="row text-center py-5">
-            <div class="col-md-4">
-                <h5>Code</h5>
-                <h4>
-                    <i class="bi bi-code"></i>
-                </h4>
-            </div>
-            <div class="col-md-4">
-                <h5>Team</h5>
-                <h4>
-                    <i class="bi bi-people"></i>
-                </h4>
-            </div>
-            <div class="col-md-4">
-                <h5>Version</h5>
-                <h4>
-                    <i class="bi bi-git"></i>
-                </h4>
-            </div>
-        </div>
-    </div>
-</section>
+        </section>
+    </ng-template>
+</ng-template>

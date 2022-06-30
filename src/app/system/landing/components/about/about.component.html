@@ -1,90 +1,57 @@
-<section style="height: 450px;">
-    <div class="container h-100 mt-5">
-        <div class="row align-items-center h-100">
-            <div class="col-md-5">
-                <span class="text-uppercase small">human or robot?</span>
-                <h2>About App</h2>
-                <p>Ow!, your are interested in my app, but, are you developer? or user? this questions are to provide correct information, don't panic! </p>
-            </div>
-            <div class="col-md-7 text-center text-uppercase small">
-                <p>Code to humans</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section>
-    <div class="container py-5">
-        <div class="row">
-            <div class="col-md-5">
-                <span class="text-start text-uppercase small">Do you use the app?</span>
-                <h3>To humans</h3>
-                <p>You can use the application for free, if you want to donate you can do it, but it is not mandatory. Lest's Go</p>
-            </div>
-        </div>
-
-        <div class="row py-5">
-            <div class="col-md-4">
-                <div class="card" style="height: 150px;">
-                    <div class="card-body">
-                        <h4>
-                            <i class="bi bi-list-task"></i>
-                        </h4>
-                        <h5 class="card-title">Create, organize task</h5>
-                        <p class="card-text">You can create task to remmeber and organize your time.</p>
+<ng-template ngFor let-section [ngForOf]="dataSection" let-i="index">
+    <ng-template [ngIf]="section.id == 1" [ngIfElse]="noneSectionMain">
+        <section style="height: 550px;">
+            <div class="container h-100 mt-5">
+                <div class="row align-items-center h-100">
+                    <div class="col-md-5">
+                        <span class="text-uppercase small">{{ section.subtitle }}</span>
+                        <h2>{{ section.title }}</h2>
+                        <p>{{ section.description }} </p>
+                        <a class="btn btn-primary" 
+                            *ngIf="section.button.status">
+                            {{ section.button.text }}
+                        </a>
+                    </div>
+                    <div class="col-md-7 text-center text-uppercase small" 
+                        *ngIf="section.button.status">
+                        <p>{{ section.button.text }}</p>
                     </div>
                 </div>
             </div>
+        </section>
+    </ng-template>
 
-            <div class="col-md-4">
-                <div class="card" style="height: 150px;">
-                    <div class="card-body">
-                        <h4>
-                            <i class="bi bi-journal-arrow-down"></i>
-                        </h4>
-                        <h5 class="card-title">Priorize tasks</h5>
-                        <p class="card-text">Priorize your tasks all time.</p>
+    <ng-template #noneSectionMain>
+        <section>
+            <div class="container py-5">
+                <div class="row">
+                    <div class="col-md-5">
+                        <span class="text-start text-uppercase small">{{ section.subtitle }}</span>
+                        <h3>{{ section.title }}</h3>
+                        <p>{{ section.description }}</p>
+                        <a class="btn btn-primary" 
+                            *ngIf="section.button.status">
+                            {{ section.button.text }}
+                        </a>
+                    </div>
+                </div>
+        
+                <div class="row py-5"
+                    *ngIf="section.items">
+                    <div class="col-md-4"
+                        *ngFor="let item of section.items">
+                        <div class="card" style="height: 150px;">
+                            <div class="card-body">
+                                <h4>
+                                    <i class="{{ item.icon }}"></i>
+                                </h4>
+                                <h5 class="card-title">{{ item.title }}</h5>
+                                <p class="card-text">{{ item.description }}</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <div class="col-md-4">
-                <div class="card" style="height: 150px;">
-                    <div class="card-body">
-                        <h4>
-                            <i class="bi bi-clock-history"></i>
-                        </h4>
-                        <h5 class="card-title">Schedule tasks</h5>
-                        <p class="card-text">schedule tasks that are frequent.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section>
-    <div class="container py-5">
-        <div class="row">
-            <div class="col-md-5">
-                <span class="text-start text-uppercase small">are you a contributor?</span>
-                <h3>To developers</h3>
-                <p>Oh yeah, you are developer, you can contribute to this project, fixing bugs, or add new functions</p>
-            </div>
-        </div>
-
-        <div class="row py-5">
-            <div class="col-md-4">
-                <div class="card" style="height: 150px;">
-                    <div class="card-body">
-                        <h4>
-                            <i class="bi bi-github"></i>
-                        </h4>
-                        <h5 class="card-title">Contribute</h5>
-                        <p class="card-text">Let's Go, write code!</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+        </section>
+    </ng-template>
+</ng-template>

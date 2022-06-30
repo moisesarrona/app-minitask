@@ -6,7 +6,8 @@
                     <span class="text-uppercase small">{{ section.subtitle }}</span>
                     <h1>{{ section.title }}</h1>
                     <p>{{ section.description }}</p>
-                    <a class="btn btn-primary">
+                    <a class="btn btn-primary" 
+                        *ngIf="section.button.status">
                         {{ section.button.text }}
                     </a>
                 </div>
@@ -22,6 +23,10 @@
                         <span class="text-uppercase small">{{ section.subtitle }}</span>
                         <h3>{{ section.title }}</h3>
                         <p>{{ section.description }}</p>
+                        <a class="btn btn-primary" 
+                            *ngIf="section.button.status">
+                            {{ section.button.text }}
+                        </a>
                     </div>
                 </div>
         

@@ -14,7 +14,8 @@ export class HomeComponent implements OnInit {
       description: "Hi, human, I'm Moises Arrona and I'm software engineer, this is my app to organize task, scroll down to know more...",
       button: {
         status: true,
-        text: "Let's go!"
+        text: "Let's go!",
+        link: ""
       }
     },
     {
@@ -24,7 +25,8 @@ export class HomeComponent implements OnInit {
       description: "Well, this app was created to register my activities in all day, and know to the progress each task, and sorry my english so bad, but you understand.",
       button: {
         status: false,
-        text: "..."
+        text: "...",
+        link: ""
       },
       items: [
         { 
@@ -51,7 +53,8 @@ export class HomeComponent implements OnInit {
       description: "Human, this app is still under development. I write code for this project, in fact the source code is on GitHub, give me one start or help me write code, your decition.",
       button: {
         status: false,
-        text: "..."
+        text: "...",
+        link: ""
       },
       items: [
         { 

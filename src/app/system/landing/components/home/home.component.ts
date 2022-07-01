@@ -16,7 +16,14 @@ export class HomeComponent implements OnInit {
         status: true,
         text: "Let's go!",
         link: ""
-      }
+      },
+      items:[
+        {title: "taks"},
+        {title: "organize"},
+        {title: "web app"},
+        {title: "team"},
+        {title: "time"}
+      ]
     },
     {
       id: 2,
@@ -48,6 +55,34 @@ export class HomeComponent implements OnInit {
     },
     {
       id: 3,
+      title: "Web app",
+      subtitle: "Milti plataform?",
+      description: "Well, well, at the moment I am working on a web application, but I think I will create a mobile application and a desktop application, but for now only the web application, wait for the future.",
+      button: {
+        status: false,
+        text: "...",
+        link: ""
+      },
+      items: [
+        { 
+          title: "Web app", 
+          description: "...", 
+          icon: "bi bi-window-stack"
+        },
+        { 
+          title: "Mobile app", 
+          description: "...", 
+          icon: "bi bi-phone"
+        },
+        { 
+          title: "Desktop app", 
+          description: "...", 
+          icon: "bi bi-laptop"
+        }
+      ],
+    },
+    {
+      id: 4,
       title: "More data",
       subtitle: "You read more",
       description: "Human, this app is still under development. I write the code for this project, in fact the source code is on GitHub, give me a start or help me write the code, you decide.",

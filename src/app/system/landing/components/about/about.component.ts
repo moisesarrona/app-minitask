@@ -16,7 +16,15 @@ export class AboutComponent implements OnInit {
         status: true,
         text: "Let's go!",
         link: ""
-      }
+      },
+      items:[
+        {title: "taks"},
+        {title: "organize"},
+        {title: "web app"},
+        {title: "schedule"},
+        {title: "time"},
+        {title: "contibute"},
+      ]
     },
     {
       id: 2,
@@ -30,7 +38,7 @@ export class AboutComponent implements OnInit {
       },
       items: [
         { 
-          title: "Create, organize, and track tasks", 
+          title: "Create, organize tasks", 
           description: "You can create task to remmeber and organize your time.", 
           icon: "bi bi-list-task"
         },
@@ -62,6 +70,11 @@ export class AboutComponent implements OnInit {
           description: "Let's Go, write code!", 
           icon: "bi bi-github"
         },
+        { 
+          title: "Techologies", 
+          description: "Angular 13, Bootstrap 5, BootsWatch 5, (In future only CSS)", 
+          icon: "bi bi-tools"
+        },
       ],
     },
     {
@@ -79,6 +92,11 @@ export class AboutComponent implements OnInit {
           title: "Contribute", 
           description: "Let's Go, write code!", 
           icon: "bi bi-github"
+        },
+        { 
+          title: "Techologies", 
+          description: "Java, SpringBoot, SpringCloud, Microservices", 
+          icon: "bi bi-tools"
         },
       ],
     },

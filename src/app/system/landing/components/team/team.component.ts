@@ -16,7 +16,15 @@ export class TeamComponent implements OnInit {
         status: true,
         text: "Write code!",
         link: ""
-      }
+      },
+      items:[
+        {title: "code"},
+        {title: "human"},
+        {title: "write"},
+        {title: "team"},
+        {title: "senior"},
+        {title: "contibute"},
+      ]
     },
     {
       id: 2,

@@ -11,7 +11,7 @@ export class AboutComponent implements OnInit {
       id: 1,
       title: "About App",
       subtitle: "human or robot?",
-      description: "Ow!, your are interested in my app, but, are you developer? or user? this questions are to provide correct information, I only show information don't panic!",
+      description: "Wow!, your are interested in my app, but, are you developer? or user? this questions are to provide correct information, I only show information don't panic!",
       button: {
         status: true,
         text: "Let's go!",
@@ -22,7 +22,7 @@ export class AboutComponent implements OnInit {
       id: 2,
       title: "To humans",
       subtitle: "Do you use the app?",
-      description: "You can use the application for free, if you want to donate you can do it, but it is not mandatory. Lest's Go",
+      description: "You can use the application for free, if you want to donate you can do it, but it is not mandatory. Let's Go",
       button: {
         status: false,
         text: "...",
@@ -30,8 +30,8 @@ export class AboutComponent implements OnInit {
       },
       items: [
         { 
-          title: "Create, organize task", 
-          description: "ou can create task to remmeber and organize your time.", 
+          title: "Create, organize, and track tasks", 
+          description: "You can create task to remmeber and organize your time.", 
           icon: "bi bi-list-task"
         },
         { 
@@ -41,7 +41,7 @@ export class AboutComponent implements OnInit {
         },
         { 
           title: "Schedule tasks", 
-          description: "schedule tasks that are frequent.", 
+          description: "You schedule tasks that are frequent.", 
           icon: "bi bi-clock-history"
         }
       ],
@@ -50,7 +50,25 @@ export class AboutComponent implements OnInit {
       id: 2,
       title: "To developers",
       subtitle: "are you a contributor?",
-      description: "Oh yeah, you are developer, you can contribute to this project, fixing bugs, or add new functions.",
+      description: "Oh yes, you are a developer, you can contribute to this project, fix bugs or add new features. this project is written in Angular 13 using Bootstrap 5 to build the UI, but in the future we will write custom styling in CSS.",
+      button: {
+        status: false,
+        text: "...",
+        link: ""
+      },
+      items: [
+        { 
+          title: "Contribute", 
+          description: "Let's Go, write code!", 
+          icon: "bi bi-github"
+        },
+      ],
+    },
+    {
+      id: 3,
+      title: "Ecosystem",
+      subtitle: "Where is the Backend?",
+      description: "This application needs a backend to work, the backend is written in Java Spring Boot, yes Java, help me write the backend to add your ideas, this need grows.",
       button: {
         status: false,
         text: "...",

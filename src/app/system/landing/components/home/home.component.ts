@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
       id: 2,
       title: "Know more...",
       subtitle: "You read",
-      description: "Well, this app was created to register my activities in all day, and know to the progress each task, and sorry my english so bad, but you understand.",
+      description: "Well, this app was created to record my activities throughout the day, and to know the progress of each task, and I'm sorry, my English is so bad, but you understand, right?.",
       button: {
         status: false,
         text: "...",
@@ -50,7 +50,7 @@ export class HomeComponent implements OnInit {
       id: 3,
       title: "More data",
       subtitle: "You read more",
-      description: "Human, this app is still under development. I write code for this project, in fact the source code is on GitHub, give me one start or help me write code, your decition.",
+      description: "Human, this app is still under development. I write the code for this project, in fact the source code is on GitHub, give me a start or help me write the code, you decide.",
       button: {
         status: false,
         text: "...",

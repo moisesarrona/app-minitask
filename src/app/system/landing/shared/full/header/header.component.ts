@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
 })
 export class HeaderComponent implements OnInit {
+  @Output() themeSelection = new EventEmitter<any>();
 
   public menuArray: any[] = [
     {
@@ -28,10 +29,16 @@ export class HeaderComponent implements OnInit {
       route: "contact"
     }
   ]
+  public themeDark: boolean = false
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  public changeTheme = ():void => {
+    this.themeDark = !this.themeDark;
+    this.themeSelection.emit(this.themeDark)
   }
 
 }

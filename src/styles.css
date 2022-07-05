@@ -15,8 +15,6 @@
     background-color: #343a40 !important;
 }
 
-.bg-primary.text-white .card,
-.bg-primary.text-white footer.bg-dark,
-.bg-primary.text-white .bg-dark {
+.bg-primary.text-white .card {
     background-color: #1a1a1a !important;
 }

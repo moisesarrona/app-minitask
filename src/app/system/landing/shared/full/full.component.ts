@@ -11,16 +11,12 @@ export class FullComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    //this.themeDark = this.changeTheme(this.themeDark);
+    this.themeDark = localStorage.getItem('theme')? true : false
   }
 
   public changeTheme = (data: any): any => {
-    localStorage.setItem('theme', data)
-    this.themeDark = data;
-  }
-
-  public getTheme = (): any => {
-    return localStorage.getItem('theme');
+    data? localStorage.setItem('theme', 'dark') : localStorage.removeItem('theme')
+    this.themeDark = data
   }
 
 }

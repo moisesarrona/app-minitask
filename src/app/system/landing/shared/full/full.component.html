@@ -1,6 +1,7 @@
-<app-header></app-header>
+<app-header
+    (themeSelection)="changeTheme($event)"></app-header>
 
-<div class="theme__dark">
+<div [ngClass]="{'bg-primary text-white': themeDark}">
     <router-outlet></router-outlet>
 </div>
 

@@ -6,7 +6,7 @@
                     <div class="col-md-5">
                         <span class="text-uppercase small">{{ section.subtitle }}</span>
                         <h2>{{ section.title }}</h2>
-                        <p>{{ section.description }} </p>
+                        <p>{{ section.description }}</p>
                         <a class="btn btn-primary" 
                             *ngIf="section.button.status">
                             {{ section.button.text }}
@@ -20,8 +20,8 @@
                 </div>
             </div>
         </section>
-    </ng-template>
-
+    </ng-template>  
+    
     <ng-template #noneSectionMain>
         <section>
             <div class="container-xxl py-5">
@@ -36,18 +36,16 @@
                         </a>
                     </div>
                 </div>
-        
-                <div class="row py-5"
+
+                <div class="row justify-content-evenly py-5"
                     *ngIf="section.items">
-                    <div class="col-md-4"
+                    <div class="col-md-3"
                         *ngFor="let item of section.items">
-                        <div class="card" style="height: 150px;">
+                        <div class="text-center" style="height: 150px;">
                             <div class="card-body">
-                                <h4>
-                                    <i class="{{ item.icon }}"></i>
-                                </h4>
-                                <h5 class="card-title">{{ item.title }}</h5>
-                                <p class="card-text">{{ item.description }}</p>
+                                <img src="{{ item.icon }}" class="rounded" style="width: 100px; height: 100px;">
+                                <p class="m-0">{{ item.title }}</p>
+                                <p class="small">{{ item.description }}</p>
                             </div>
                         </div>
                     </div>
@@ -55,4 +53,4 @@
             </div>
         </section>
     </ng-template>
-</ng-template>
+</ng-template>  

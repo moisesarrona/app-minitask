@@ -64,18 +64,18 @@ export class FooterComponent implements OnInit {
   ]
 
   public dataWords: any[] = [
-    {title: "taks"},
-    {title: "organize"},
-    {title: "web app"},
-    {title: "schedule"},
-    {title: "time"},
-    {title: "contibute"},
-    {title: "code"},
-    {title: "human"},
-    {title: "write"},
-    {title: "team"},
-    {title: "senior"},
-    {title: "contibute"},
+    { title: "taks" },
+    { title: "organize" },
+    { title: "web app" },
+    { title: "schedule" },
+    { title: "time" },
+    { title: "contibute" },
+    { title: "code" },
+    { title: "human" },
+    { title: "write" },
+    { title: "team" },
+    { title: "senior" },
+    { title: "contibute" },
   ]
 
   constructor() { }

@@ -5,17 +5,19 @@
                 <div class="row">
                     <div class="col"
                     *ngFor="let item of dataFooter">
-                    <p class="small text-uppercase text-muted font-weight">{{ item.title }}</p>
+                    <p class="text-uppercase text-muted fw-bold small">{{ item.title }}</p>
                     <ul class="list-unstyled">
                         <li class="mb-2" 
-                            *ngFor="let child of item.child">{{ child.name }}</li>
+                            *ngFor="let child of item.child">
+                            <a class="fw-light" href="{{ child.link }}"> {{ child.name }} </a>
+                        </li>
                     </ul>
                 </div>
                 </div>
             </div>
 
             <div class="col-4 text-end">
-                <p>Thanks you read and the navigate this page, write and use this app, made with love <i class="bi bi-arrow-through-heart"></i>.</p>
+                <p class="fst-italic fw-light">Thanks you read and the navigate this page, write and use this app, made with love <i class="bi bi-arrow-through-heart"></i>.</p>
             </div>
 
             <div class="row justify-content-evenly pt-5">

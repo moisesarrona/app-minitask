@@ -11,7 +11,7 @@ export class HomeComponent implements OnInit {
       id: 1,
       title: "Minitask",
       subtitle: "Our app",
-      description: "Hi, human, I'm Moises Arrona and I'm software engineer, this is my app to organize task, scroll down to know more...",
+      description: "Hi human, I'm Moises Arrona and I'm software engineer, this is my mini app to organize task, yes ORGANIZE, scroll down to know more...",
       button: {
         status: true,
         text: "Let's go!",

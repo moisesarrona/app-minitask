@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-full',
-  templateUrl: './full.component.html',
+  selector: 'app-landing-template',
+  templateUrl: './landing-template.component.html',
 })
-export class FullComponent implements OnInit {
+export class LandingTemplateComponent implements OnInit {
 
   public themeDark: boolean = false
 

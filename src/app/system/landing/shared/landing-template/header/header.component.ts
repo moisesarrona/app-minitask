@@ -34,7 +34,7 @@ export class HeaderComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.themeDark = localStorage.getItem('theme')? true : false
+    this.themeDark = localStorage.getItem('landing-theme')? true : false
   }
 
   public changeTheme = ():void => {

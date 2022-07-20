@@ -10,7 +10,7 @@ export class AboutComponent implements OnInit {
     {
       id: 1,
       title: "About App",
-      subtitle: "human or robot?",
+      subtitle: "human or Developer?",
       description: "Wow!, your are interested in my app, but, are you developer? or user? this questions are to provide correct information, I only show information don't panic!",
       button: {
         status: true,
@@ -66,8 +66,8 @@ export class AboutComponent implements OnInit {
       },
       items: [
         { 
-          title: "Contribute", 
-          description: "Let's Go, write code!", 
+          title: "Frontend", 
+          description: "Write code for users, i believe in your work and imagination.", 
           icon: "bi bi-github"
         },
         { 
@@ -89,8 +89,8 @@ export class AboutComponent implements OnInit {
       },
       items: [
         { 
-          title: "Contribute", 
-          description: "Let's Go, write code!", 
+          title: "Backend", 
+          description: "This app needs a backend to work, the backend provides the data, functions and services, you cand help me?", 
           icon: "bi bi-github"
         },
         { 

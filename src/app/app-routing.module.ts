@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { FullComponent } from './system/landing/shared/full/full.component';
+import { LandingTemplateComponent } from './system/landing/shared/landing-template/landing-template.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: FullComponent,
+    component: LandingTemplateComponent,
     loadChildren: () => import('./system/landing/landing.module').then(m => m.LandingModule)
   }
 ];

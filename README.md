@@ -1,7 +1,7 @@
 # app-minitask
 This is app create to consume the api api-minitask and organize your tasks.  
 
-Version 0.1.7  
+Version 0.1.1  
 Description: Build module task
 
 ## Technologies

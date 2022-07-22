@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ContentI } from '../../models/content.interface';
 
 @Component({
   selector: 'app-home',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  public dataSection: any[] = [
+  public dataSection: ContentI[] = [
     {
       id: 1,
       title: "Minitask",
@@ -17,12 +18,12 @@ export class HomeComponent implements OnInit {
         text: "Let's go!",
         link: ""
       },
-      items:[
-        {title: "taks"},
-        {title: "organize"},
-        {title: "web app"},
-        {title: "team"},
-        {title: "time"}
+      items: [
+        { title: "taks" },
+        { title: "organize" },
+        { title: "web app" },
+        { title: "team" },
+        { title: "time" }
       ]
     },
     {
@@ -36,19 +37,19 @@ export class HomeComponent implements OnInit {
         link: ""
       },
       items: [
-        { 
-          title: "Organize", 
-          description: "...", 
+        {
+          title: "Organize",
+          description: "...",
           icon: "bi bi-sort-alpha-down"
         },
-        { 
-          title: "Time", 
-          description: "...", 
+        {
+          title: "Time",
+          description: "...",
           icon: "bi bi-alarm"
         },
-        { 
-          title: "Practice", 
-          description: "...", 
+        {
+          title: "Practice",
+          description: "...",
           icon: "bi bi-play-btn"
         }
       ],
@@ -64,19 +65,19 @@ export class HomeComponent implements OnInit {
         link: ""
       },
       items: [
-        { 
-          title: "Web app", 
-          description: "...", 
+        {
+          title: "Web app",
+          description: "...",
           icon: "bi bi-window-stack"
         },
-        { 
-          title: "Mobile app", 
-          description: "...", 
+        {
+          title: "Mobile app",
+          description: "...",
           icon: "bi bi-phone"
         },
-        { 
-          title: "Desktop app", 
-          description: "...", 
+        {
+          title: "Desktop app",
+          description: "...",
           icon: "bi bi-laptop"
         }
       ],
@@ -92,19 +93,19 @@ export class HomeComponent implements OnInit {
         link: ""
       },
       items: [
-        { 
-          title: "Code", 
-          description: "...", 
+        {
+          title: "Code",
+          description: "...",
           icon: "bi bi-code"
         },
-        { 
-          title: "Team", 
-          description: "...", 
+        {
+          title: "Team",
+          description: "...",
           icon: "bi bi-people"
         },
-        { 
-          title: "Version", 
-          description: "...", 
+        {
+          title: "Version",
+          description: "...",
           icon: "bi bi-git"
         }
       ],

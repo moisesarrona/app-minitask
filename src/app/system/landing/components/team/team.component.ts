@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ContentI } from '../../models/content.interface';
 
 @Component({
   selector: 'app-team',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TeamComponent implements OnInit {
 
-  public dataSection: any[] = [
+  public dataSection: ContentI[] = [
     {
       id: 1,
       title: "Our Team",
@@ -17,13 +18,13 @@ export class TeamComponent implements OnInit {
         text: "Write code!",
         link: ""
       },
-      items:[
-        {title: "code"},
-        {title: "human"},
-        {title: "write"},
-        {title: "team"},
-        {title: "senior"},
-        {title: "contibute"},
+      items: [
+        { title: "code" },
+        { title: "human" },
+        { title: "write" },
+        { title: "team" },
+        { title: "senior" },
+        { title: "contibute" },
       ]
     },
     {
@@ -37,14 +38,14 @@ export class TeamComponent implements OnInit {
         link: ""
       },
       items: [
-        { 
-          title: "@moisesarrona", 
-          description: "I am software engineer, to creator of app-minitask.", 
+        {
+          title: "@moisesarrona",
+          description: "I am software engineer, to creator of app-minitask.",
           icon: "https://avatars.githubusercontent.com/u/57106162?v=4"
         },
-        { 
-          title: "@mybot", 
-          description: "I am bot developer, i need to mantain code and fix bugs.", 
+        {
+          title: "@mybot",
+          description: "I am bot developer, i need to mantain code and fix bugs.",
           icon: "https://avatars.githubusercontent.com/u/27347476?s=280&v=4"
         }
       ],
@@ -60,9 +61,9 @@ export class TeamComponent implements OnInit {
         link: ""
       },
       items: [
-        { 
-          title: "Anonimous", 
-          description: "We are anonimous.", 
+        {
+          title: "Anonimous",
+          description: "We are anonimous.",
           icon: "..."
         }
       ],

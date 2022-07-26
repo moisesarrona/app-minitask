@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastI } from '../../models/toast.interface';
 
 @Component({
   selector: 'app-landing-template',
@@ -6,7 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingTemplateComponent implements OnInit {
 
-  public themeDark: boolean = false
+  public themeDark: boolean = false;
+  public dataToast: ToastI = {
+    title: "Welcome!",
+    description: "This landing contains secrets, so be careful!",
+    time: new Date()
+  }
 
   constructor() { }
 

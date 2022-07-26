@@ -1,20 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
-.bg-primary.text-white h1,
-.bg-primary.text-white h2,
-.bg-primary.text-white h3,
-.bg-primary.text-white h4,
-.bg-primary.text-white h5,
-.bg-primary.text-white h6,
-.bg-primary.text-white p,
-.bg-primary.text-white a,
-.bg-primary.text-white .card {
+/* - - - - -
+
+    D A R K  M O D E
+
+- - - - - */
+.dark-mode {
+    background-color: #1a1a1a !important;
+    color: #fff !important;
+}
+
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode h4,
+.dark-mode h5,
+.dark-mode h6,
+.dark-mode p,
+.dark-mode a,
+.dark-mode .card {
     color: #ffffff !important;
 }
 
-.bg-primary.text-white .btn.btn-primary {
+.dark-mode .btn.btn-primary {
     background-color: #343a40 !important;
 }
 
-.bg-primary.text-white .card {
+.dark-mode .card {
     background-color: #1a1a1a !important;
 }

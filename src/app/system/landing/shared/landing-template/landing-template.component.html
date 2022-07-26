@@ -1,7 +1,7 @@
 <app-header
     (themeSelection)="changeTheme($event)"></app-header>
 
-<div [ngClass]="{'bg-primary text-white': themeDark}">
+<div [ngClass]="{'dark-mode': themeDark}">
     <router-outlet></router-outlet>
 </div>
 

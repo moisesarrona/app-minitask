@@ -10,7 +10,7 @@ export class LandingTemplateComponent implements OnInit {
   public themeDark: boolean = false;
   public dataToast: ToastI = {
     title: "Welcome!",
-    description: "This landing contains secrets, so be careful!",
+    description: "This landing page contains secrets, discover them, so be careful!",
     time: new Date()
   }
 

@@ -1,8 +1,12 @@
 <app-header
     (themeSelection)="changeTheme($event)"></app-header>
 
-<div [ngClass]="{'bg-primary text-white': themeDark}">
+<div [ngClass]="{'dark-mode': themeDark}">
     <router-outlet></router-outlet>
+    
+    <!-- Toats APP -->
+    <app-toast-notification 
+        [data]="dataToast"></app-toast-notification>
 </div>
 
 <app-footer></app-footer>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ContentI } from '../../models/content.interface';
 
 @Component({
   selector: 'app-about',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
-  public dataSection: any[] = [
+  public dataSection: ContentI[] = [
     {
       id: 1,
       title: "About App",
@@ -17,13 +18,13 @@ export class AboutComponent implements OnInit {
         text: "Let's go!",
         link: ""
       },
-      items:[
-        {title: "taks"},
-        {title: "organize"},
-        {title: "web app"},
-        {title: "schedule"},
-        {title: "time"},
-        {title: "contibute"},
+      items: [
+        { title: "taks" },
+        { title: "organize" },
+        { title: "web app" },
+        { title: "schedule" },
+        { title: "time" },
+        { title: "contibute" },
       ]
     },
     {
@@ -37,19 +38,19 @@ export class AboutComponent implements OnInit {
         link: ""
       },
       items: [
-        { 
-          title: "Create, organize tasks", 
-          description: "You can create task to remmeber and organize your time.", 
+        {
+          title: "Create, organize tasks",
+          description: "You can create task to remmeber and organize your time.",
           icon: "bi bi-list-task"
         },
-        { 
-          title: "Priorize tasks", 
-          description: "Priorize your tasks all time.", 
+        {
+          title: "Priorize tasks",
+          description: "Priorize your tasks all time.",
           icon: "bi bi-journal-arrow-down"
         },
-        { 
-          title: "Schedule tasks", 
-          description: "You schedule tasks that are frequent.", 
+        {
+          title: "Schedule tasks",
+          description: "You schedule tasks that are frequent.",
           icon: "bi bi-clock-history"
         }
       ],
@@ -65,14 +66,14 @@ export class AboutComponent implements OnInit {
         link: ""
       },
       items: [
-        { 
-          title: "Frontend", 
-          description: "Write code for users, i believe in your work and imagination.", 
+        {
+          title: "Frontend",
+          description: "Write code for users, i believe in your work and imagination.",
           icon: "bi bi-github"
         },
-        { 
-          title: "Techologies", 
-          description: "Angular 13, Bootstrap 5, BootsWatch 5, (In future only CSS)", 
+        {
+          title: "Techologies",
+          description: "Angular 13, Bootstrap 5, BootsWatch 5, (In future only CSS)",
           icon: "bi bi-tools"
         },
       ],
@@ -88,14 +89,14 @@ export class AboutComponent implements OnInit {
         link: ""
       },
       items: [
-        { 
-          title: "Backend", 
-          description: "This app needs a backend to work, the backend provides the data, functions and services, you cand help me?", 
+        {
+          title: "Backend",
+          description: "This app needs a backend to work, the backend provides the data, functions and services, you cand help me?",
           icon: "bi bi-github"
         },
-        { 
-          title: "Techologies", 
-          description: "Java, SpringBoot, SpringCloud, Microservices", 
+        {
+          title: "Techologies",
+          description: "Java, SpringBoot, SpringCloud, Microservices",
           icon: "bi bi-tools"
         },
       ],

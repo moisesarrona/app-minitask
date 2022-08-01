@@ -1,0 +1,14 @@
+<div class="toast-container position-fixed bottom-0 start-0 p-3">
+    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" [ngClass]="{'fade show showin': isVisible}">
+        <div class="toast-header">
+            <strong class="me-auto">{{ data.title }}</strong>
+            <small>{{ data.time | date }}</small>
+            <button type="button" class="btn-close ms-2 mb-1" data-bs-dismiss="toast" aria-label="Close">
+                <span aria-hidden="true"></span>
+            </button>
+        </div>
+        <div class="toast-body">
+            {{ data.description }}
+        </div>
+    </div>
+</div>

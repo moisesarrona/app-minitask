@@ -1,8 +1,8 @@
 # app-minitask
 This is app create to consume the api api-minitask and organize your tasks.  
 
-Version 0.1.1  
-Description: Build module task
+Version 0.2.0  
+Description: Informative toast is added in landing page and css variables are added  
 
 ## Technologies
 - Angular 13.3.0

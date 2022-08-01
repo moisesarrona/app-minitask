@@ -1,20 +1,57 @@
 /* You can add global styles to this file, and also import other style files */
-.bg-primary.text-white h1,
-.bg-primary.text-white h2,
-.bg-primary.text-white h3,
-.bg-primary.text-white h4,
-.bg-primary.text-white h5,
-.bg-primary.text-white h6,
-.bg-primary.text-white p,
-.bg-primary.text-white a,
-.bg-primary.text-white .card {
-    color: #ffffff !important;
+/* - - - - -
+
+    R O O T
+
+- - - - - */
+:root {
+    /* --- colors --- */
+    --color-primary: #1a1a1a;
+    --color-secondary: #343a40;
+    --color-white: #fafafa;
+    --color-black: #000;
+
+    --color-primary-rgba: rgb(26, 26, 26, 0.5);
+    --color-secondary-rgba: rgb(52, 58, 64, 0.5);
+    --color-white-rgba: rgb(250, 250, 250, 0.5);
+    --color-black-rgba: rgb(0, 0, 0, 0.5);
 }
 
-.bg-primary.text-white .btn.btn-primary {
-    background-color: #343a40 !important;
+
+/* - - - - -
+
+    D A R K  M O D E
+
+- - - - - */
+.dark-mode {
+    background-color: var(--color-primary) !important;
+    color: var(--color-white) !important;
 }
 
-.bg-primary.text-white .card {
-    background-color: #1a1a1a !important;
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode h4,
+.dark-mode h5,
+.dark-mode h6,
+.dark-mode p,
+.dark-mode a,
+.dark-mode .card {
+    color: var(--color-white) !important;
+}
+
+.dark-mode .btn.btn-primary {
+    background-color: var(--color-secondary) !important;
+}
+
+.dark-mode .card {
+    background-color: var(--color-primary) !important;
+}
+
+.dark-mode .toast,
+.dark-mode .toast-header {
+    background-color: var(--color-primary) !important;
+}
+.dark-mode .toast {
+    border: 1px solid rgb(0, 128, 0, 0.5);
 }

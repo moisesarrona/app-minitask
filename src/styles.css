@@ -1,4 +1,3 @@
-/* You can add global styles to this file, and also import other style files */
 /* - - - - -
 
     R O O T
@@ -54,4 +53,105 @@
 }
 .dark-mode .toast {
     border: 1px solid rgb(0, 128, 0, 0.5);
+}
+
+
+/* - - - - -
+
+    D A S H B O A R D
+
+- - - - - */
+.content {
+    display: flex;
+}
+
+.content__central {
+    padding: 0rem 2rem;
+    width: calc(100% - 100px);
+    margin-left: auto;
+}
+
+/* - - - sidebar - - - */
+.sidebar {
+    position: fixed;
+    max-width: 100px;
+    min-width: 100px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: var(--color-primary);
+}
+
+.sidebar__logo {
+    width: 100%;
+    min-height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.95rem;
+    color: var(--color-white);
+}
+
+.sidebar__menu {
+    width: 100%;
+    margin-bottom: auto;
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar__menu--item {
+    padding: 1.2rem 0rem 1.2rem 0rem;
+    display: flex;
+    justify-content: center;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+.sidebar__menu--item a {
+    color: rgb(250, 250, 250, 0.4);
+    font-size: 1.3rem;
+}
+
+.sidebar__footer {
+    min-height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+}
+
+/* - - - sidebar - - - */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 0rem 3rem 0rem;
+}
+
+.header__search {
+    width: 350px;
+}
+
+.header__menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.header__menu--item {
+    display: inline-block;
+    font-size: 1.15rem;
+    cursor: pointer;
+    text-align: center;
+    padding: 0.85rem 1.25rem;
+}
+
+.active {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+.active a {
+    color: var(--color-white);
 }

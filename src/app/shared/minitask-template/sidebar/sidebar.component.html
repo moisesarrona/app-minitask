@@ -1,1 +1,26 @@
-<p>sidebar works!</p>
+<nav class="sidebar">
+    <div class="sidebar__logo">
+        MT
+    </div>
+
+    <ul class="sidebar__menu">
+        <li class="sidebar__menu--item"
+        data-bs-toggle="tooltip" data-bs-placement="right" title="{{ item.name }}"
+        *ngFor="let item of sidebarData">
+            <a [routerLink]="item.url">
+                <i class="{{ item.icon }}"></i>
+            </a>
+        </li>
+    </ul>
+
+    <div class="sidebar__footer">
+        <ul class="sidebar__menu">
+            <li class="sidebar__menu--item"
+            data-bs-toggle="tooltip" data-bs-placement="right" title="Settings">
+                <a routerLink="/">
+                    <i class="bi bi-gear"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>

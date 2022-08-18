@@ -1,1 +1,25 @@
-<p>header works!</p>
+<header class="header">
+    <div class="header__search">
+        <form>
+            <div class="input-group">
+                <input type="text" class="form-control">
+                <span class="input-group-text">
+                    <i class="bi bi-search"></i>
+                </span>
+              </div>
+        </form>
+    </div>
+
+    <div class="header__options">
+        <ul class="header__menu">
+            <li class="header__menu--item" 
+            data-bs-toggle="tooltip" data-bs-placement="bottom" title="{{ item.name }}"
+            *ngFor="let item of headerData; let i = index"
+            [ngClass]="{'active': i == headerData.length-1}">
+                <a [routerLink]="item.url">
+                    <i class="{{ item.icon }}"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+</header>

@@ -1,0 +1,73 @@
+<main class="content">
+    <!-- sidebar -->
+    <nav class="sidebar">
+        <div class="sidebar__logo">
+            MT
+        </div>
+
+        <ul class="sidebar__menu">
+            <li class="sidebar__menu--item">
+                <a>
+                    <i class="bi bi-house-door" 
+                    data-bs-toggle="tooltip" data-bs-placement="right" title="Home"></i>
+                </a>
+            </li>
+            <li class="sidebar__menu--item">
+                <a>
+                    <i class="bi bi-journal" 
+                    data-bs-toggle="tooltip" data-bs-placement="right" title="Task"></i>
+                </a>
+            </li>
+            <li class="sidebar__menu--item">
+                <a>
+                    <i class="bi bi-chat-dots" 
+                    data-bs-toggle="tooltip" data-bs-placement="right" title="Messages"></i>
+                </a>
+            </li>
+            <li class="sidebar__menu--item">
+                <a>
+                    <i class="bi bi-binoculars" 
+                    data-bs-toggle="tooltip" data-bs-placement="right" title="Explore"></i>
+                </a>
+            </li>
+        </ul>
+
+        <div class="sidebar__footer">
+            <a>
+                <i class="bi bi-gear" data-bs-toggle="tooltip" data-bs-placement="right" title="Settings"></i>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <div class="content__central">
+        <!-- header -->
+        <header class="header">
+            <div class="header__search">
+                <form>
+                    <input class="form-control" type="text" placeholder="Search">
+                </form>
+            </div>
+
+            <div class="header__options">
+                <ul>
+                    <li class="" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Notifications">
+                        <a>
+                            <i class="bi bi-bell"></i>
+                        </a>
+                    </li>
+                    <li class="" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Perfil">
+                        <a>
+                            <i class="bi bi-person-circle"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+
+        <!-- main -->
+        <section>
+            <router-outlet></router-outlet>
+        </section>
+    </div>
+</main>

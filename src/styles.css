@@ -14,6 +14,10 @@
     --color-secondary-rgba: rgb(52, 58, 64, 0.5);
     --color-white-rgba: rgb(250, 250, 250, 0.5);
     --color-black-rgba: rgb(0, 0, 0, 0.5);
+
+    /* --- size --- */
+    --size-sidebar: 1.3rem;
+    --width-sidebar: 100px;
 }
 
 
@@ -58,24 +62,33 @@
 
 /* - - - - -
 
+    C U S T O M
+
+ - - - - - */
+.card {
+    border-radius: 0rem !important;
+}
+
+
+/* - - - - -
+
     D A S H B O A R D
 
 - - - - - */
-.content {
-    display: flex;
-}
-
 .content__central {
     padding: 0rem 2rem;
-    width: calc(100% - 100px);
+    width: calc(100% - var(--width-sidebar));
     margin-left: auto;
 }
 
 /* - - - sidebar - - - */
 .sidebar {
     position: fixed;
-    max-width: 100px;
-    min-width: 100px;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    max-width: var(--width-sidebar);
+    min-width: var(--width-sidebar);
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -84,13 +97,25 @@
     background-color: var(--color-primary);
 }
 
+.sidebar__overlay {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--color-black-rgba);
+    z-index: 1;
+    display: none;
+}
+
 .sidebar__logo {
     width: 100%;
     min-height: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 0.95rem;
+    font-size: var(--size-sidebar);
     color: var(--color-white);
 }
 
@@ -98,31 +123,34 @@
     width: 100%;
     margin-bottom: auto;
     list-style: none;
-    padding: 0;
+    padding: 0;    
 }
 
 .sidebar__menu--item {
     padding: 1.2rem 0rem 1.2rem 0rem;
     display: flex;
     justify-content: center;
-    font-size: 1.3rem;
+    font-size: var(--size-sidebar);
     cursor: pointer;
 }
 
 .sidebar__menu--item a {
     color: rgb(250, 250, 250, 0.4);
-    font-size: 1.3rem;
+    font-size: var(--size-sidebar);
+}
+.sidebar__menu--item a:hover {
+    color: var(--color-white);
 }
 
 .sidebar__footer {
-    min-height: 100px;
+    min-height: var(--width-sidebar);
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.3rem;
+    font-size: var(--size-sidebar);
 }
 
-/* - - - sidebar - - - */
+/* - - - header - - - */
 .header {
     display: flex;
     align-items: center;
@@ -131,9 +159,17 @@
 }
 
 .header__search {
-    width: 350px;
+    flex: 1;
+}
+.header__search .header__menu {
+    display: none;
 }
 
+.header__options {
+    flex: 1;
+    text-align: end;
+}
+ 
 .header__menu {
     list-style: none;
     padding: 0;
@@ -148,10 +184,72 @@
     padding: 0.85rem 1.25rem;
 }
 
-.active {
+.header__menu--item.active {
     background-color: var(--color-primary);
     color: var(--color-white);
 }
-.active a {
+.header__menu--item.active a,
+.header__menu--item.active a:hover {
     color: var(--color-white);
+}
+
+
+/* - - - - -
+
+    R E S P O N S I V E
+
+- - - - - */
+@media (max-width: 750px) {
+    .content__central {
+        width: 100%;
+        padding: 5.8rem 1.4rem;
+    }
+
+    .sidebar {
+        display: none;
+    }
+    .sidebar.active {
+        display: block;
+    }
+    .sidebar__overlay.active {
+        display: block;
+    }
+
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: var(--color-primary);
+        color: var(--color-white) !important;
+        padding: 0.4rem 0rem;
+        z-index: 1;
+    }
+
+    .header__search {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .header__search .header__menu {
+        display: block;
+    }
+    .header__search .form-control {
+        background: var(--color-primary) !important;
+        border: 0px !important;
+        border-bottom: 1px solid white !important;
+        color: var(--color-white) !important;
+    }
+    .header__search .input-group-text {
+        display: none;
+    }
+    .header__search .header__menu--item a,
+    .header__search .header__menu--item a:hover {
+        color: var(--color-white);
+    }
+
+    .header__options .header__menu--item a, 
+    .header__options .header__menu--item a:hover {
+        color: var(--color-white);
+    }
 }

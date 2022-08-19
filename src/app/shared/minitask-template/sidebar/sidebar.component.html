@@ -1,4 +1,4 @@
-<nav class="sidebar">
+<nav class="sidebar" [ngClass]="{'active': menuStatus}">
     <div class="sidebar__logo">
         MT
     </div>
@@ -24,3 +24,6 @@
         </ul>
     </div>
 </nav>
+<div class="sidebar__overlay" 
+[ngClass]="{'active': menuStatus}"
+(click)="menuStatus = !menuStatus"></div>

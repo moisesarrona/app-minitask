@@ -8,6 +8,8 @@ declare var bootstrap: any;
 })
 export class MinitaskTemplateComponent implements OnInit {
 
+  public menuStatus: boolean = false;
+
   constructor() { }
 
   ngOnInit(): void {
@@ -22,6 +24,10 @@ export class MinitaskTemplateComponent implements OnInit {
     var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
       return new bootstrap.Tooltip(tooltipTriggerEl)
     }) 
+  }
+
+  public menuEvent = (status: boolean) => {
+    this.menuStatus = status;
   }
 
 }

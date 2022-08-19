@@ -1,11 +1,20 @@
 <header class="header">
     <div class="header__search">
+        <ul class="header__menu">
+            <li class="header__menu--item" 
+            data-bs-toggle="tooltip" data-bs-placement="bottom" title="Menu">
+                <a (click)="openMenu($event)">
+                    <i class="bi bi-list"></i>
+                </a>
+            </li>
+        </ul>
+
         <form>
             <div class="input-group">
-                <input type="text" class="form-control">
                 <span class="input-group-text">
                     <i class="bi bi-search"></i>
                 </span>
+                <input type="text" class="form-control" placeholder="Busca en Minitask...">
               </div>
         </form>
     </div>

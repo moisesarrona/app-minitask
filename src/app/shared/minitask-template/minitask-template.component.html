@@ -1,11 +1,11 @@
 <main class="content">
     <!-- sidebar -->
-    <app-sidebar></app-sidebar>
+    <app-sidebar [menuStatus]="menuStatus"></app-sidebar>
 
     <!-- Content -->
     <div class="content__central">
         <!-- header -->
-        <app-header></app-header>
+        <app-header (menuEvent)="menuEvent($event)"></app-header>
 
         <!-- main -->
         <section>

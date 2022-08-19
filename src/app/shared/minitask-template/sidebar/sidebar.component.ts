@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { SidebarData } from 'src/app/model/data/minitask-template/sidebar-data.json';
 import { SidebarI } from 'src/app/model/interface/minitask-template/sidebar.interface';
 
@@ -7,6 +7,7 @@ import { SidebarI } from 'src/app/model/interface/minitask-template/sidebar.inte
   templateUrl: './sidebar.component.html',
 })
 export class SidebarComponent implements OnInit {
+  @Input() menuStatus: boolean = false;
 
   public sidebarData: SidebarI[] = [];
 

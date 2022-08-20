@@ -9,14 +9,13 @@ import { HeaderI } from 'src/app/model/interface/minitask-template/header.interf
 export class HeaderComponent implements OnInit {
   @Output() menuEvent = new EventEmitter<any>();
 
-
   public headerData: HeaderI[] = [];
   public menuStatus: boolean = false;
 
   constructor() { }
 
   ngOnInit(): void {
-    this.headerData = HeaderData;
+    this.headerData = HeaderData.filter(item => item.active === true).reverse();
   }
 
   public openMenu = (event: any): void => {

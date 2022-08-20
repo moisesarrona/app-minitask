@@ -9,10 +9,12 @@ declare var bootstrap: any;
 export class MinitaskTemplateComponent implements OnInit {
 
   public menuStatus: boolean = false;
+  public themeStatus: boolean = false;
 
   constructor() { }
 
   ngOnInit(): void {
+    this.themeStatus = localStorage.getItem('landing-theme')? true : false
   }
 
   ngAfterViewInit(): void {
@@ -28,6 +30,12 @@ export class MinitaskTemplateComponent implements OnInit {
 
   public menuEvent = (status: boolean) => {
     this.menuStatus = status;
+    
+  }
+
+  public themeEvent = (status: boolean) => {
+    status? localStorage.setItem('landing-theme', 'dark') : localStorage.removeItem('landing-theme')
+    this.themeStatus = status
   }
 
 }

@@ -44,16 +44,24 @@
 }
 
 .dark-mode .btn.btn-primary {
-    background-color: var(--color-secondary) !important;
+    background: var(--color-secondary) !important;
+    color: var(--color-white) !important;
 }
 
-.dark-mode .card {
-    background-color: var(--color-primary) !important;
+.dark-mode .card,
+.dark-mode .accordion-button,
+.dark-mode .accordion-item,
+.dark-mode .page-link,
+.dark-mode .list-group-item,
+.dark-mode .form-control,
+.dark-mode .input-group-text  {
+    background: var(--color-secondary) !important;
+    color: var(--color-white) !important;
 }
 
 .dark-mode .toast,
 .dark-mode .toast-header {
-    background-color: var(--color-primary) !important;
+    background-color: var(--color-secondary-rgba) !important;
 }
 .dark-mode .toast {
     border: 1px solid rgb(0, 128, 0, 0.5);
@@ -65,7 +73,9 @@
     C U S T O M
 
  - - - - - */
-.card {
+.card,
+.list-group,
+.navigation {
     border-radius: 0rem !important;
 }
 

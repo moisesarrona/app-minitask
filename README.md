@@ -1,9 +1,9 @@
 # app-minitask
 This is app create to consume the api api-minitas. create and organize your tasks. app status is primitive, I keep writing code.
 
->Version: 0.2.1  
+>Version: 0.2.2  
 Author: [@moisesarrona](https://github.com/mosesarrona)  
-Description: Struncture change two folder to landing page and app  
+Description: Fix responsive desing in "Landing Page" in mobile device  
 
 ## Technologies
 - Angular 13.3.0

@@ -1,7 +1,7 @@
 <ng-template ngFor let-section [ngForOf]="dataSection" let-i="index">
     <ng-template [ngIf]="i == 0" [ngIfElse]="noneSectionMain">
         <section style="height: 550px;">
-            <div class="container-xxl h-100 mt-5">
+            <div class="container-xl h-100 mt-5">
                 <div class="row align-items-center justify-content-between h-100">
                     <div class="col-md-5">
                         <span class="text-uppercase small">{{ section.subtitle }}</span>
@@ -24,7 +24,7 @@
     
     <ng-template #noneSectionMain>
         <section>
-            <div class="container-xxl py-5">
+            <div class="container-xl py-5">
                 <div class="row">
                     <div class="col-md-5">
                         <span class="text-start text-uppercase small">{{ section.subtitle }}</span>
@@ -39,7 +39,7 @@
 
                 <div class="row justify-content-evenly py-5"
                     *ngIf="section.items">
-                    <div class="col-md-3"
+                    <div class="col-md-3 col-sm-2 mb-4"
                         *ngFor="let item of section.items">
                         <div class="text-center" style="height: 150px;">
                             <div class="card-body">

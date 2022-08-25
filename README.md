@@ -1,9 +1,9 @@
 # app-minitask
 This is app create to consume the api api-minitas. create and organize your tasks. app status is primitive, I keep writing code.
 
->Version: 0.2.2  
-Author: [@moisesarrona](https://github.com/mosesarrona)  
-Description: Fix responsive desing in "Landing Page" in mobile device  
+>__v0.2.3__  
+__Author:__ [@moisesarrona](https://github.com/mosesarrona)  
+__Description:__ Template created for app-minitask dashboard sidebar, header and content  
 
 ## Technologies
 - Angular 13.3.0
@@ -11,8 +11,9 @@ Description: Fix responsive desing in "Landing Page" in mobile device
 - zone.js 0.11.4
 
 ## Dependencies
-- Bootstrap 5.0.2
-- BootsWatch 5.0.2
+- Bootstrap ^5.2.0
+- BootsWatch ^4.5.2
+- Bootstrap Icon ^1.9.1
 
 ## Requirements
 - Node 16.14.2

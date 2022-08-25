@@ -1,0 +1,15 @@
+<main class="content">
+    <!-- sidebar -->
+    <app-sidebar [menuStatus]="menuStatus" (themeEvent)="themeEvent($event)"></app-sidebar>
+
+    <!-- Content -->
+    <div class="content__central" [ngClass]="{'dark-mode': themeStatus}">
+        <!-- header -->
+        <app-header (menuEvent)="menuEvent($event)"></app-header>
+
+        <!-- main -->
+        <section>
+            <router-outlet></router-outlet>
+        </section>
+    </div>
+</main>

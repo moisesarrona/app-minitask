@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ContentI } from '../../models/content.interface';
+import { ContentI } from '../../models/interface/content.interface';
 
 @Component({
   selector: 'app-home',

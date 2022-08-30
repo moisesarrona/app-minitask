@@ -8,7 +8,7 @@ import { ContentI } from '../../models/interface/content.interface';
 })
 export class HomeComponent implements OnInit {
 
-  public contentData: ContentI[] = []
+  public contentData: ContentI[] = [];
 
   constructor() { }
 

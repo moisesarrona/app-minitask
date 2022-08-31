@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FooterData, FooterWords } from 'src/app/sys-landing/models/data/footer-data.json';
+import { MenuI } from 'src/app/sys-landing/models/interface/menu.interface';
 
 @Component({
   selector: 'app-footer',
@@ -6,81 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  public dataFooter: any[] = [
-    {
-      id: 1,
-      title: 'Cummunity',
-      description: '...',
-      child: [
-        {
-          name: 'Github',
-          link: '#',
-        },
-        {
-          name: 'Twitter',
-          link: '#',
-        }
-      ]
-    },
-    {
-      id: 2,
-      title: 'Legal',
-      description: '...',
-      child: [
-        {
-          name: 'Privacy',
-          link: '#',
-        },
-        {
-          name: 'Cookies',
-          link: '#',
-        },
-        {
-          name: 'Terms and Conditions',
-          link: '#',
-        },
-        {
-          name: 'Open Source',
-          link: '#',
-        }
-    
-      ]
-    },
-    {
-      id: 3,
-      title: 'Projects',
-      description: '...',
-      child: [
-        {
-          name: 'app-minitask',
-          link: '#',
-        },
-        {
-          name: 'api-minitask',
-          link: '#',
-        }    
-      ]
-    }
-  ]
-
-  public dataWords: any[] = [
-    { title: "taks" },
-    { title: "organize" },
-    { title: "web app" },
-    { title: "schedule" },
-    { title: "time" },
-    { title: "contibute" },
-    { title: "code" },
-    { title: "human" },
-    { title: "write" },
-    { title: "team" },
-    { title: "senior" },
-    { title: "contibute" },
-  ]
+  public footerData: MenuI[] = [];
+  public footerWords: any[] = [];
 
   constructor() { }
 
   ngOnInit(): void {
+    this.footerData = FooterData;
+    this.footerWords = FooterWords;
   }
 
 }

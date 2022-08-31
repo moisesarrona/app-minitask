@@ -8,7 +8,7 @@ import { ContentI } from '../../models/interface/content.interface';
 })
 export class TeamComponent implements OnInit {
 
-  public teamData: ContentI[] = []
+  public teamData: ContentI[] = [];
 
   constructor() { }
 

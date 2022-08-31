@@ -6,8 +6,8 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li *ngFor="let item of menuArray">
-                    <a class="nav-link" [routerLink]="item.route" routerLinkActive="active">{{ item.name }}</a>
+                <li *ngFor="let item of menuData">
+                    <a class="nav-link" [routerLink]="item.url" routerLinkActive="active">{{ item.name }}</a>
                 </li>
             </ul>
             <div class="d-flex">

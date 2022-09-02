@@ -10,18 +10,18 @@ export class HeaderComponent implements OnInit {
   @Output() themeSelection = new EventEmitter<any>();
 
   public menuData: MenuI[] = [];
-  public themeDark: boolean = false;
+  public themeStatus: boolean = false;
 
   constructor() { }
 
   ngOnInit(): void {
-    this.themeDark = localStorage.getItem('landing-theme')? true : false;
+    this.themeStatus = localStorage.getItem('landing-theme')? true : false;
     this.menuData = HeaderData;
   }
 
   public changeTheme = ():void => {
-    this.themeDark = !this.themeDark;
-    this.themeSelection.emit(this.themeDark);
+    this.themeStatus = !this.themeStatus;
+    this.themeSelection.emit(this.themeStatus);
   }
 
 }

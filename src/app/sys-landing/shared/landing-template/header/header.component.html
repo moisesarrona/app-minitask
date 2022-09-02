@@ -13,8 +13,7 @@
             <div class="d-flex">
                 <a class="nav-link"
                     (click)="changeTheme()">
-                    <i class="bi bi-moon-fill" *ngIf="!themeDark"></i>
-                    <i class="bi bi-brightness-high-fill" *ngIf="themeDark"></i>
+                    <i [ngClass]="{'bi bi-brightness-high-fill':  themeStatus, 'bi bi-moon-fill': !themeStatus}"></i>
                 </a>
                 <a class="nav-link" routerLink="/app">
                     APP

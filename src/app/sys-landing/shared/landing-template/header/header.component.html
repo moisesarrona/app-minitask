@@ -6,15 +6,14 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li *ngFor="let item of menuArray">
-                    <a class="nav-link" [routerLink]="item.route" routerLinkActive="active">{{ item.name }}</a>
+                <li *ngFor="let item of menuData">
+                    <a class="nav-link" [routerLink]="item.url" routerLinkActive="active">{{ item.name }}</a>
                 </li>
             </ul>
             <div class="d-flex">
                 <a class="nav-link"
                     (click)="changeTheme()">
-                    <i class="bi bi-moon-fill" *ngIf="!themeDark"></i>
-                    <i class="bi bi-brightness-high-fill" *ngIf="themeDark"></i>
+                    <i [ngClass]="{'bi bi-brightness-high-fill':  themeStatus, 'bi bi-moon-fill': !themeStatus}"></i>
                 </a>
                 <a class="nav-link" routerLink="/app">
                     APP

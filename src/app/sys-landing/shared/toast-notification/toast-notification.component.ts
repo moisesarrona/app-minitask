@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ToastI } from '../../models/toast.interface';
+import { ToastI } from '../../models/interface/toast.interface';
 
 @Component({
   selector: 'app-toast-notification',

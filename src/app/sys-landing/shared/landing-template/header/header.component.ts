@@ -1,4 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { HeaderData } from 'src/app/sys-landing/models/data/header-data.json';
+import { MenuI } from 'src/app/sys-landing/models/interface/menu.interface';
 
 @Component({
   selector: 'app-header',
@@ -7,39 +9,19 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 export class HeaderComponent implements OnInit {
   @Output() themeSelection = new EventEmitter<any>();
 
-  public menuArray: any[] = [
-    {
-      id: 1,
-      name: "Home",
-      route: "home"
-    },
-    {
-      id: 2,
-      name: "About",
-      route: "about"
-    },
-    {
-      id: 3,
-      name: "Team",
-      route: "team"
-    },
-    {
-      id: 3,
-      name: "Contact",
-      route: "contact"
-    }
-  ]
-  public themeDark: boolean = false
+  public menuData: MenuI[] = [];
+  public themeStatus: boolean = false;
 
   constructor() { }
 
   ngOnInit(): void {
-    this.themeDark = localStorage.getItem('landing-theme')? true : false
+    this.themeStatus = localStorage.getItem('landing-theme')? true : false;
+    this.menuData = HeaderData;
   }
 
   public changeTheme = ():void => {
-    this.themeDark = !this.themeDark;
-    this.themeSelection.emit(this.themeDark)
+    this.themeStatus = !this.themeStatus;
+    this.themeSelection.emit(this.themeStatus);
   }
 
 }

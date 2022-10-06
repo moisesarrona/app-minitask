@@ -43,7 +43,6 @@
 .dark-mode h5,
 .dark-mode h6,
 .dark-mode p,
-.dark-mode a,
 .dark-mode .card {
     color: var(--color-white) !important;
 }

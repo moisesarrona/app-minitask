@@ -1,0 +1,48 @@
+<section class="vh-100 dark-mode">
+    <div class="row justify-content-center align-items-center h-100 w-100 m-0">
+        <div class="card col-md-4 py-4 px-4">
+            <div class="form-login" [ngClass]="{'d-none': !showAuth}">
+                <form>
+                    <h2>Login</h2>
+                    <div class="form-group">
+                        <label for="email-con" class="form-label mt-2">Email address</label>
+                        <input type="email" class="form-control" id="email-con" placeholder="Enter email">
+                    </div>
+                    <div class="form-group">
+                        <label for="password-c" class="form-label mt-2">Password</label>
+                        <input type="password" class="form-control" id="password-c" placeholder="Password">
+                    </div>
+
+                    <a class="link-secondary d-block" routerLink="/">Back to Home</a>
+                    <a class="link-secondary d-block mt-2" (click)="showAuthEvent()">Create account</a>
+                    <button type="submit" class="btn btn-primary w-100 mt-2">Login</button>
+                </form>
+            </div>
+
+            <div class="form-register" [ngClass]="{'d-none': showAuth}">
+                <form>
+                    <h2>Register</h2>
+                    <div class="form-group">
+                        <label for="name-c" class="form-label mt-2">Name</label>
+                        <input type="name" class="form-control" id="name-c" placeholder="Enter name">
+                    </div>
+                    <div class="form-group">
+                        <label for="username-c" class="form-label mt-2">Username</label>
+                        <input type="username" class="form-control" id="username-c" placeholder="Enter username">
+                    </div>
+                    <div class="form-group">
+                        <label for="email-c" class="form-label mt-2">Email address</label>
+                        <input type="email" class="form-control" id="email-c" placeholder="Enter email">
+                    </div>
+                    <div class="form-group">
+                        <label for="password-c" class="form-label mt-2">Password</label>
+                        <input type="password" class="form-control" id="password-c" placeholder="Password">
+                    </div>
+                    
+                    <a class="link-secondary" (click)="showAuthEvent()">Back to Login</a>
+                    <button type="submit" class="btn btn-primary w-100 mt-2">Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { MinitaskAuthTemplateComponent } from './shared/minitask-auth-template/minitask-auth-template.component';
 import { MinitaskTemplateComponent } from './shared/minitask-template/minitask-template.component';
 import { LandingTemplateComponent } from './sys-landing/shared/landing-template/landing-template.component';
 
@@ -13,7 +14,11 @@ const routes: Routes = [
     path: 'app',
     component: MinitaskTemplateComponent,
     loadChildren: () => import('./shared/shared.module').then(m => m.SharedModule)
-  }, 
+  },
+  {
+    path: 'login',
+    component: MinitaskAuthTemplateComponent,
+  },
   {
     path: '**',
     redirectTo: 'landing',

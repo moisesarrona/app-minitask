@@ -1,4 +1,4 @@
-import { SidebarI } from "../../interface/minitask-template/sidebar.interface";
+import { SidebarI } from "../../interfaces/minitask-template/sidebar.interface";
 
 export const SidebarData: SidebarI[] = [
     {

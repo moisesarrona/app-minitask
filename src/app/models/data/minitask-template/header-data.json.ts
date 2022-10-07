@@ -1,4 +1,4 @@
-import { HeaderI } from "../../interface/minitask-template/header.interface";
+import { HeaderI } from "../../interfaces/minitask-template/header.interface";
 
 export const HeaderData: HeaderI[] = [
     {

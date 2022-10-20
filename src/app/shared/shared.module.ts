@@ -6,6 +6,7 @@ import { MinitaskTemplateComponent } from './minitask-template/minitask-template
 import { HeaderComponent } from './minitask-template/header/header.component';
 import { SidebarComponent } from './minitask-template/sidebar/sidebar.component';
 import { MinitaskAuthTemplateComponent } from './minitask-auth-template/minitask-auth-template.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { MinitaskAuthTemplateComponent } from './minitask-auth-template/minitask
   ],
   imports: [
     CommonModule,
-    SharedRoutingModule
+    SharedRoutingModule,
+    HttpClientModule
   ]
 })
 export class SharedModule { }

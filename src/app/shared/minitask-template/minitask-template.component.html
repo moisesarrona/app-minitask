@@ -1,11 +1,11 @@
 <main class="content">
     <!-- sidebar -->
-    <app-sidebar [menuStatus]="menuStatus" (themeEvent)="themeEvent($event)"></app-sidebar>
+    <app-sidebar [menuStatus]="menuStatus" (themeEvent)="changeTheme($event)"></app-sidebar>
 
     <!-- Content -->
     <div class="content__central" [ngClass]="{'dark-mode': themeStatus}">
         <!-- header -->
-        <app-header (menuEvent)="menuEvent($event)"></app-header>
+        <app-header (menuEvent)="openMenu($event)"></app-header>
 
         <!-- main -->
         <section>

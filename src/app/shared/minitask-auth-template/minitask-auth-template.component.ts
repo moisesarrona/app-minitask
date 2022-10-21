@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MinitaskAuthTemplateComponent implements OnInit {
 
-  public showAuth: boolean = true
+  public authShow: boolean = true
 
   constructor() { }
 
@@ -14,7 +14,7 @@ export class MinitaskAuthTemplateComponent implements OnInit {
   }
 
   public showAuthEvent = ():void => {
-    this.showAuth = !this.showAuth
+    this.authShow = !this.authShow
   }
 
 }

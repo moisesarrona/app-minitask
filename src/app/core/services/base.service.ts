@@ -14,8 +14,13 @@ export class BaseService {
     private httpClient: HttpClient
   ) { }
 
-  protected httpGetMethod = (url: string, param: any): Observable<any> => {
-    return this.httpClient.get(`${API_END_POINT}/${url}/${param}`)
+  protected httpGetMethod = (url: string, param?: any): Observable<any> => {
+    let params = '';
+    if (param)
+      Object.values(param).forEach(item => {
+        params += '/' + item;
+      });
+    return this.httpClient.get(`${API_END_POINT}/${url}${params}`)
       .pipe(catchError(this.handleError))
   }
 
@@ -24,17 +29,21 @@ export class BaseService {
       .pipe(catchError(this.handleError))
   }
 
-  protected httpPutMethod = (url: string, data: any) => {
+  protected httpPutMethod = (url: string, data: any): Observable<any> => {
     return this.httpClient.put(`${API_END_POINT}/${url}`, data)
       .pipe(catchError(this.handleError))
   }
 
   private handleError = (error: HttpErrorResponse): any => {
+    console.log(error)
     let errorMessage = ''
     if (error.error instanceof ErrorEvent) {
       errorMessage = `Error: ${error.error.message}`
     } else {
-      errorMessage = `Status: ${error.status} \nError: ${error.message} \nUrl: ${error.url}`
+      if (error.error != null)
+        errorMessage = `Status: ${error.error.status} \nError: ${error.error.message} \nUrl: ${error.url}`
+      else 
+        errorMessage = `Status: ${error.status} \nError: ${error.message} \nUrl: ${error.url}`
     }
     return throwError(() => errorMessage)
   }

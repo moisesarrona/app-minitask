@@ -7,6 +7,7 @@ import { HeaderComponent } from './minitask-template/header/header.component';
 import { SidebarComponent } from './minitask-template/sidebar/sidebar.component';
 import { MinitaskAuthTemplateComponent } from './minitask-auth-template/minitask-auth-template.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -19,7 +20,9 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     CommonModule,
     SharedRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class SharedModule { }

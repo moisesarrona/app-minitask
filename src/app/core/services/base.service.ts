@@ -21,20 +21,20 @@ export class BaseService {
         params += '/' + item;
       });
     return this.httpClient.get(`${API_END_POINT}/${url}${params}`)
-      .pipe(catchError(this.handleError))
+      .pipe(catchError(this.handlerError))
   }
 
   protected httpPostMethod = (url: string, data: any): Observable<any> => {
     return this.httpClient.post(`${API_END_POINT}/${url}`, data)
-      .pipe(catchError(this.handleError))
+      .pipe(catchError(this.handlerError))
   }
 
   protected httpPutMethod = (url: string, data: any): Observable<any> => {
     return this.httpClient.put(`${API_END_POINT}/${url}`, data)
-      .pipe(catchError(this.handleError))
+      .pipe(catchError(this.handlerError))
   }
 
-  private handleError = (error: HttpErrorResponse): any => {
+  private handlerError = (error: HttpErrorResponse): any => {
     console.log(error)
     let errorMessage = ''
     if (error.error instanceof ErrorEvent) {

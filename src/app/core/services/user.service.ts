@@ -21,8 +21,8 @@ export class UserService extends BaseService {
     return this.httpPostMethod(`${this.urlService}/createdUser`,user);
   }
 
-  public findUserByEmailAndPassword = (param: any) => {
-    return this.httpGetMethod(`${this.urlService}/findUserByEmailAndPassword`, param);
+  public findUserByEmailAndPassword = (user: any) => {
+    return this.httpPostMethod(`${this.urlService}/findUserByEmailAndPassword`, user);
   }
 
 }

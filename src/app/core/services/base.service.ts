@@ -1,6 +1,7 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, throwError } from 'rxjs';
+import { ErrorHttpI } from 'src/app/models/interfaces/errors/error-http.interface';
 import { environment } from 'src/environments/environment';
 
 const API_END_POINT = environment.apiUrl
@@ -9,6 +10,8 @@ const API_END_POINT = environment.apiUrl
   providedIn: 'root'
 })
 export class BaseService {
+
+  private errorHttp: ErrorHttpI = {};
 
   constructor(
     private httpClient: HttpClient
@@ -34,17 +37,17 @@ export class BaseService {
       .pipe(catchError(this.handlerError))
   }
 
-  private handlerError = (error: HttpErrorResponse): any => {
-    console.log(error)
-    let errorMessage = ''
+  private handlerError = (error: HttpErrorResponse): Observable<any> => {
     if (error.error instanceof ErrorEvent) {
-      errorMessage = `Error: ${error.error.message}`
+      this.errorHttp = {
+        message: error.error.message
+      }
     } else {
-      if (error.error != null)
-        errorMessage = `Status: ${error.error.status} \nError: ${error.error.message} \nUrl: ${error.url}`
-      else 
-        errorMessage = `Status: ${error.status} \nError: ${error.message} \nUrl: ${error.url}`
+      this.errorHttp = {
+        httpStatus: error.status,
+        message: error.message
+      }
     }
-    return throwError(() => errorMessage)
+    return throwError(() => this.errorHttp)
   }
 }

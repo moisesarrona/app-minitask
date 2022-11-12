@@ -1,8 +1,10 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
 import { UserService } from 'src/app/core/services/user.service';
+import { ErrorHttpI } from 'src/app/models/interfaces/errors/error-http.interface';
+import { ErrorTypeI, ErrorTypes } from 'src/app/models/interfaces/errors/error-type.interface';
 
 @Component({
   selector: 'app-minitask-auth-template',
@@ -10,7 +12,7 @@ import { UserService } from 'src/app/core/services/user.service';
 })
 export class MinitaskAuthTemplateComponent implements OnInit, OnDestroy {
 
-  public formUserRegister: FormGroup = this.formBuilder.group({
+  public formUserRegister: FormGroup = this._formBuilder.group({
     name: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(50)]],
     lastname: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(50)]],
     birthday: ['', [Validators.required]],
@@ -18,30 +20,37 @@ export class MinitaskAuthTemplateComponent implements OnInit, OnDestroy {
     email: ['', [Validators.required, Validators.email]],
     password: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(255)]]
   })
-  public formUserLogin: FormGroup = this.formBuilder.group({
+  public formUserLogin: FormGroup = this._formBuilder.group({
     email: ['', [Validators.required, Validators.email]],
     password: ['', [Validators.required]]
   })
 
   public themeDark: boolean = false;
   public authShow: boolean = true;
+  public formLoad: boolean = false;
 
-  public $subject = new Subject();
+  public user: any = {};
+
+  public errorHttp: ErrorHttpI = {};
+  public errorIs: boolean = false;
+  public errorType: ErrorTypeI = {}
+
+  public _subject = new Subject();
 
   constructor(
-    private formBuilder: FormBuilder,
-    private userService: UserService,
-    private router: Router
+    private _formBuilder: FormBuilder,
+    private _userService: UserService,
+    private _route: Router
   ) { }
 
   ngOnInit(): void {
-    this.themeDark = localStorage.getItem('landing-theme')? true : false
+    this.themeDark = localStorage.getItem('landing-theme')? true : false;
   }
 
   ngOnDestroy(): void {
     //this.$subject.next(true);
-    this.$subject.complete();
-    this.$subject.unsubscribe();
+    this._subject.complete();
+    this._subject.unsubscribe();
   }
 
   public showAuthEvent = ():void => {
@@ -54,38 +63,52 @@ export class MinitaskAuthTemplateComponent implements OnInit, OnDestroy {
   }
 
   public createRegister = (): any => {
+    this.formLoad = true;
     this.formUserRegister.markAllAsTouched()
-    console.log(this.formUserRegister.value)
-    if (this.formUserRegister.valid) {
-      this.userService.createdUser(this.formUserRegister.value).pipe(takeUntil(this.$subject)).subscribe(
+    if (this.formUserRegister.valid)
+      this._userService.createdUser(this.formUserRegister.value).pipe(takeUntil(this._subject)).subscribe(
         (success: any) => {
-          console.log(success)
+          this.user = success
         }, (error: any) => {
-          console.log(error)
+          this.handlerErrorHttp(error, ErrorTypes.DANGER);
+          this._route.navigate(["app"])
         }
       ).add(() => {
-        console.log("End service")
+        this.formLoad = false;
       })
-    } else {
-      console.log("Error")
-    }
   }
 
   public findUserLogin = (): any => {
+    this.formLoad = true;
     this.formUserLogin.markAllAsTouched()
-    if (this.formUserLogin.valid) {
-      this.userService.findUserByEmailAndPassword(this.formUserLogin.value).pipe(takeUntil(this.$subject)).subscribe(
+    if (this.formUserLogin.valid)
+      this._userService.findUserByEmailAndPassword(this.formUserLogin.value).pipe(takeUntil(this._subject)).subscribe(
         (success: any) => {
-          console.log(success)
+          this.user = success;
+          this._route.navigate(["app"])
         }, (error: any) => {
-          console.log(error)
+          this.handlerErrorHttp(error, ErrorTypes.DANGER);
         }
       ).add(() => {
-        console.log("End service")
+        this.formLoad = false;
       })
-    } else {
-      console.log("Error")
-    }
   }
-    
+
+  public handlerErrorHttp = (error: ErrorHttpI, errorType: string): void =>  {
+    this.errorIs = true;
+    this.errorHttp = error;
+    this.errorType.type = errorType;
+    setTimeout(() => {
+      this.errorIs = false
+    }, 3500);
+  }
+
+  public validateFormControl = (formControl: any): boolean => {
+    return (formControl.invalid && (formControl.dirty || formControl.touched))? true : false;
+  }
+
+  public getErrorFormControl = (formControl: any): any => {
+    return Object.keys(formControl.errors)
+  }
+
 }

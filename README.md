@@ -1,9 +1,9 @@
 # app-minitask
 This is app create to consume the api api-minitas. create and organize your tasks. app status is primitive, I keep writing code.
 
->__v0.2.4__  
+>__v0.3.0__  
 __Author:__ [@moisesarrona](https://github.com/mosesarrona)  
-__Description:__ architecture change for data consumption
+__Description:__ Login and register to access app
 
 ## Technologies
 - Angular 13.3.0

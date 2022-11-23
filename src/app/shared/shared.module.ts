@@ -5,7 +5,9 @@ import { SharedRoutingModule } from './shared-routing.module';
 import { MinitaskTemplateComponent } from './minitask-template/minitask-template.component';
 import { HeaderComponent } from './minitask-template/header/header.component';
 import { SidebarComponent } from './minitask-template/sidebar/sidebar.component';
-import { ExampleComponent } from './example/example.component';
+import { MinitaskAuthTemplateComponent } from './minitask-auth-template/minitask-auth-template.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -13,11 +15,14 @@ import { ExampleComponent } from './example/example.component';
     MinitaskTemplateComponent,
     HeaderComponent,
     SidebarComponent,
-    ExampleComponent
+    MinitaskAuthTemplateComponent,
   ],
   imports: [
     CommonModule,
-    SharedRoutingModule
+    SharedRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class SharedModule { }

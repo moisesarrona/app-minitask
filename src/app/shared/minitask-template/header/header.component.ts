@@ -1,6 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { HeaderData } from 'src/app/model/data/minitask-template/header-data.json';
-import { HeaderI } from 'src/app/model/interface/minitask-template/header.interface';
+import { HeaderI } from 'src/app/models/interfaces/minitask-template/header.interface';
+import { HeaderData } from 'src/app/models/data/minitask-template/header-data.json';
 
 @Component({
   selector: 'app-header',

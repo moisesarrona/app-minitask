@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { SidebarData } from 'src/app/model/data/minitask-template/sidebar-data.json';
-import { SidebarI } from 'src/app/model/interface/minitask-template/sidebar.interface';
+import { SidebarI } from 'src/app/models/interfaces/minitask-template/sidebar.interface';
+import { SidebarData } from 'src/app/models/data/minitask-template/sidebar-data.json';
 
 @Component({
   selector: 'app-sidebar',

@@ -28,12 +28,12 @@ export class MinitaskTemplateComponent implements OnInit {
     }) 
   }
 
-  public themeEvent = (status: boolean) => {
+  public changeTheme = (status: boolean) => {
     status? localStorage.setItem('landing-theme', 'dark') : localStorage.removeItem('landing-theme')
     this.themeStatus = status
   }
 
-  public menuEvent = (status: boolean) => {
+  public openMenu = (status: boolean) => {
     this.menuStatus = status;
   }
 

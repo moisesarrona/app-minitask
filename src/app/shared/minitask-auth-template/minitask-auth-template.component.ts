@@ -5,6 +5,7 @@ import { Subject, takeUntil } from 'rxjs';
 import { UserService } from 'src/app/core/services/user.service';
 import { ErrorHttpI } from 'src/app/models/interfaces/errors/error-http.interface';
 import { ErrorTypeI, ErrorTypes } from 'src/app/models/interfaces/errors/error-type.interface';
+import { UserI } from 'src/app/models/interfaces/user/user.interface';
 
 @Component({
   selector: 'app-minitask-auth-template',
@@ -30,6 +31,7 @@ export class MinitaskAuthTemplateComponent implements OnInit, OnDestroy {
   public formLoad: boolean = false;
 
   public user: any = {};
+  public userIf: boolean = false;
 
   public errorHttp: ErrorHttpI = {};
   public errorIs: boolean = false;
@@ -45,6 +47,9 @@ export class MinitaskAuthTemplateComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.themeDark = localStorage.getItem('landing-theme')? true : false;
+    this.userIf = localStorage.getItem('user-session')? true : false;
+    if (this.userIf)
+      this._route.navigate(["app"])
   }
 
   ngOnDestroy(): void {
@@ -84,6 +89,7 @@ export class MinitaskAuthTemplateComponent implements OnInit, OnDestroy {
       this._userService.findUserByEmailAndPassword(this.formUserLogin.value).pipe(takeUntil(this._subject)).subscribe(
         (success: any) => {
           this.user = success;
+          this.addUserLocalStorage(this.user)
           this._route.navigate(["app"])
         }, (error: any) => {
           this.handlerErrorHttp(error, ErrorTypes.DANGER);
@@ -108,6 +114,14 @@ export class MinitaskAuthTemplateComponent implements OnInit, OnDestroy {
 
   public getErrorFormControl = (formControl: any): any => {
     return Object.keys(formControl.errors)
+  }
+
+  public addUserLocalStorage = (user: UserI): void => {
+    localStorage.setItem('user-session', JSON.stringify(user));
+  }
+
+  public deleteUserLocalStorage = (): void => {
+    localStorage.removeItem('user-session');
   }
 
 }

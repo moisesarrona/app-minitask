@@ -48,7 +48,6 @@ export class MinitaskAuthTemplateComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    //this.$subject.next(true);
     this._subject.complete();
     this._subject.unsubscribe();
   }

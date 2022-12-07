@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 declare var bootstrap: any;
 
@@ -11,10 +12,19 @@ export class MinitaskTemplateComponent implements OnInit {
   public menuStatus: boolean = false;
   public themeStatus: boolean = false;
 
-  constructor() { }
+  public user: any = {};
+  public userIf: boolean = false;
+
+  constructor(
+    private _route: Router
+  ) { }
 
   ngOnInit(): void {
     this.themeStatus = localStorage.getItem('landing-theme')? true : false
+    /* This code is not oficial to auth in this app */
+    this.userIf = localStorage.getItem('user-session')? !true : !false;
+    if (this.userIf)
+      this._route.navigate(["login"])
   }
 
   ngAfterViewInit(): void {

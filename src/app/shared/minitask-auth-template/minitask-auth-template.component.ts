@@ -47,6 +47,7 @@ export class MinitaskAuthTemplateComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.themeDark = localStorage.getItem('landing-theme')? true : false;
+    /* This code is not oficial to auth in this app */
     this.userIf = localStorage.getItem('user-session')? true : false;
     if (this.userIf)
       this._route.navigate(["app"])
@@ -116,10 +117,18 @@ export class MinitaskAuthTemplateComponent implements OnInit, OnDestroy {
     return Object.keys(formControl.errors)
   }
 
+  /*
+   * @author @moisesarrona
+   * @description This code is not oficial to auth in this app
+   */
   public addUserLocalStorage = (user: UserI): void => {
     localStorage.setItem('user-session', JSON.stringify(user));
   }
 
+  /*
+   * @author @moisesarrona
+   * @description This code is not oficial to auth in this app
+   */
   public deleteUserLocalStorage = (): void => {
     localStorage.removeItem('user-session');
   }

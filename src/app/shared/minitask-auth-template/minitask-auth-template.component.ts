@@ -50,7 +50,7 @@ export class MinitaskAuthTemplateComponent implements OnInit, OnDestroy {
     /* This code is not oficial to auth in this app */
     this.userIf = localStorage.getItem('user-session')? true : false;
     if (this.userIf)
-      this._route.navigate(["app"])
+      this._route.navigate(["app/user"])
   }
 
   ngOnDestroy(): void {
@@ -76,7 +76,7 @@ export class MinitaskAuthTemplateComponent implements OnInit, OnDestroy {
           this.user = success
         }, (error: any) => {
           this.handlerErrorHttp(error, ErrorTypes.DANGER);
-          this._route.navigate(["app"])
+          this._route.navigate(["app/user"])
         }
       ).add(() => {
         this.formLoad = false;
@@ -91,7 +91,7 @@ export class MinitaskAuthTemplateComponent implements OnInit, OnDestroy {
         (success: any) => {
           this.user = success;
           this.addUserLocalStorage(this.user)
-          this._route.navigate(["app"])
+          this._route.navigate(["app/user"])
         }, (error: any) => {
           this.handlerErrorHttp(error, ErrorTypes.DANGER);
         }

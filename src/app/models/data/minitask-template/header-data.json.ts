@@ -4,7 +4,7 @@ export const HeaderData: HeaderI[] = [
     {
         icon: "bi bi-person-circle",
         name: "Profile",
-        url: "/app",
+        url: "/app/user/perfil",
         active: true
     },
     {

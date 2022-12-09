@@ -13,7 +13,12 @@ const routes: Routes = [
   {
     path: 'app',
     component: MinitaskTemplateComponent,
-    loadChildren: () => import('./shared/shared.module').then(m => m.SharedModule)
+    children: [
+      {
+        path: 'user',
+        loadChildren: () => import('./sys-minitask/user/user.module').then(m => m.UserModule)
+      }
+    ]
   },
   {
     path: 'login',

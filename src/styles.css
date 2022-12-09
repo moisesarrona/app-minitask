@@ -43,7 +43,8 @@
 .dark-mode h5,
 .dark-mode h6,
 .dark-mode p,
-.dark-mode .card {
+.dark-mode .card,
+.dark-mode .header__menu--item a {
     color: var(--color-white) !important;
 }
 
@@ -98,7 +99,8 @@
 .card,
 .list-group,
 .navigation,
-.alert {
+.alert,
+.active {
     border-radius: 0rem !important;
 }
 

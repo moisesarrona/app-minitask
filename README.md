@@ -26,7 +26,7 @@ Clone the project from github
 ```
 Download dependencies to projetc
 ```
-~ ❯ npm update
+~ ❯ npm install
 ```
 Run app
 ```

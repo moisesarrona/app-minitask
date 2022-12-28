@@ -32,6 +32,7 @@ Run app
 ```
 ~ ❯ ng serve -o
 ```
+**Note: if you work in this project, please, create a new branch**
 
 ## About me 👨‍💻
 Hi, my name is Moises Arrona I'm creator this api, follow me in for more projects

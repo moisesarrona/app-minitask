@@ -4,113 +4,115 @@
     <strong>Status: {{ errorHttp.httpStatus }}</strong> Message: {{ errorHttp.message }}
 </div>
 
-{{ formLoad }}
-
 <section class="vh-100" [ngClass]="{'dark-mode': themeDark}">
     <div class="row justify-content-center align-items-center h-100 w-100 m-0">
         <div class="card col-md-5 col-sm-10 py-4 px-4 overflow-auto" style="max-height: 90%;">
             <!-- login -->
             <div class="form-login" [ngClass]="{'d-none': !authShow}">
                 <form [formGroup]="formUserLogin" (ngSubmit)="findUserLogin()">
-                    <h2>Login</h2>
-                    <div class="form-group">
-                        <label for="email-lo" class="form-label mt-2">Email address</label>
-                        <input type="email" class="form-control" id="email-lo" placeholder="Enter email"
-                            formControlName="email"
-                            [ngClass]="{'is-invalid': validateFormControl(formUserLogin.controls['email'])}">   
-                        <div class="text-danger"
-                            *ngIf="validateFormControl(formUserLogin.controls['email'])">
-                            {{ getErrorFormControl(formUserLogin.controls['email']) }}
-                        </div>    
-                    </div>
-                    <div class="form-group">
-                        <label for="password-lo" class="form-label mt-2">Password</label>
-                        <input type="password" class="form-control" id="password-lo" placeholder="Password"
-                            formControlName="password"
-                            [ngClass]="{'is-invalid': validateFormControl(formUserLogin.controls['password'])}">
-                        <div class="text-danger"
-                        *ngIf="validateFormControl(formUserLogin.controls['password'])">
-                        {{ getErrorFormControl(formUserLogin.controls['password']) }}
-                        </div> 
-                    </div>
+                    <fieldset [disabled]="formLoad">
+                        <h2>Login</h2>
+                        <div class="form-group">
+                            <label for="email-lo" class="form-label mt-2">Email address</label>
+                            <input type="email" class="form-control" id="email-lo" placeholder="Enter email"
+                                formControlName="email"
+                                [ngClass]="{'is-invalid': validateFormControl(formUserLogin.controls['email'])}">   
+                            <div class="text-danger"
+                                *ngIf="validateFormControl(formUserLogin.controls['email'])">
+                                {{ getErrorFormControl(formUserLogin.controls['email']) }}
+                            </div>    
+                        </div>
+                        <div class="form-group">
+                            <label for="password-lo" class="form-label mt-2">Password</label>
+                            <input type="password" class="form-control" id="password-lo" placeholder="Password"
+                                formControlName="password"
+                                [ngClass]="{'is-invalid': validateFormControl(formUserLogin.controls['password'])}">
+                            <div class="text-danger"
+                            *ngIf="validateFormControl(formUserLogin.controls['password'])">
+                            {{ getErrorFormControl(formUserLogin.controls['password']) }}
+                            </div> 
+                        </div>
 
-                    <a class="link-secondary d-block" routerLink="/">Back to Home</a>
-                    <a class="link-secondary d-block mt-2" (click)="showAuthEvent()">Create account</a>
-                    <button type="submit" class="btn btn-primary w-100 mt-2">Login</button>
+                        <a class="link-secondary d-block" routerLink="/">Back to Home</a>
+                        <a class="link-secondary d-block mt-2" (click)="showAuthEvent()">Create account</a>
+                        <button type="submit" class="btn btn-primary w-100 mt-2">Login</button>
+                    </fieldset>
                 </form>
             </div>
 
             <!-- register -->
             <div class="form-register" [ngClass]="{'d-none': authShow}">
                 <form [formGroup]="formUserRegister" (ngSubmit)="createRegister()">
-                    <h2>Register</h2>
-                    <div class="form-group">
-                        <label for="name-re" class="form-label mt-2">Name</label>
-                        <input type="text" name="name" class="form-control" id="name-re" placeholder="Enter name"
-                            formControlName="name"
-                            [ngClass]="{'is-invalid': validateFormControl(formUserRegister.controls['name'])}">
-                        <div class="text-danger"
-                            *ngIf="validateFormControl(formUserRegister.controls['name'])">
-                            {{ getErrorFormControl(formUserRegister.controls['name']) }}
-                        </div> 
-                    </div>
-                    <div class="form-group">
-                        <label for="lastname-re" class="form-label mt-2">Lastname</label>
-                        <input type="text" name="lastname" class="form-control" id="lastname-re"
-                            placeholder="Enter lastname" 
-                            formControlName="lastname"
-                            [ngClass]="{'is-invalid': validateFormControl(formUserRegister.controls['lastname'])}">
-                        <div class="text-danger"
-                            *ngIf="validateFormControl(formUserRegister.controls['lastname'])">
-                            {{ getErrorFormControl(formUserRegister.controls['lastname']) }}
-                        </div> 
-                    </div>
-                    <div class="form-group">
-                        <label for="birthday-re" class="form-label mt-2">Birtday</label>
-                        <input type="date" name="birthday" class="form-control" id="birthday-re"
-                            placeholder="Enter birthday" 
-                            formControlName="birthday"
-                            [ngClass]="{'is-invalid': validateFormControl(formUserRegister.controls['birthday'])}">
-                        <div class="text-danger"
-                            *ngIf="validateFormControl(formUserRegister.controls['birthday'])">
-                            {{ getErrorFormControl(formUserRegister.controls['birthday']) }}
-                        </div> 
-                    </div>
-                    <div class="form-group">
-                        <label for="username-re" class="form-label mt-2">Username</label>
-                        <input type="text" name="username" class="form-control" id="username-re"
-                            placeholder="Enter username" 
-                            formControlName="username"
-                            [ngClass]="{'is-invalid': validateFormControl(formUserRegister.controls['username'])}">
-                        <div class="text-danger"
-                            *ngIf="validateFormControl(formUserRegister.controls['username'])">
-                            {{ getErrorFormControl(formUserRegister.controls['username']) }}
-                        </div> 
-                    </div>
-                    <div class="form-group">
-                        <label for="email-re" class="form-label mt-2">Email address</label>
-                        <input type="email" name="email" class="form-control" id="email-re" placeholder="Enter email"
-                            formControlName="email"
-                            [ngClass]="{'is-invalid': validateFormControl(formUserRegister.controls['email'])}">
-                        <div class="text-danger"
-                            *ngIf="validateFormControl(formUserRegister.controls['email'])">
-                            {{ getErrorFormControl(formUserRegister.controls['email']) }}
-                        </div> 
-                    </div>
-                    <div class="form-group">
-                        <label for="password-re" class="form-label mt-2">Password</label>
-                        <input type="password" name="password" class="form-control" id="password-re"
-                            placeholder="Password" 
-                            formControlName="password"
-                            [ngClass]="{'is-invalid': validateFormControl(formUserRegister.controls['password'])}">
-                        <div class="text-danger"
-                            *ngIf="validateFormControl(formUserRegister.controls['password'])">
-                            {{ getErrorFormControl(formUserRegister.controls['password']) }}
-                        </div> 
-                    </div>
+                    <fieldset [disabled]="formLoad">
+                        <h2>Register</h2>
+                        <div class="form-group">
+                            <label for="name-re" class="form-label mt-2">Name</label>
+                            <input type="text" name="name" class="form-control" id="name-re" placeholder="Enter name"
+                                formControlName="name"
+                                [ngClass]="{'is-invalid': validateFormControl(formUserRegister.controls['name'])}">
+                            <div class="text-danger"
+                                *ngIf="validateFormControl(formUserRegister.controls['name'])">
+                                {{ getErrorFormControl(formUserRegister.controls['name']) }}
+                            </div> 
+                        </div>
+                        <div class="form-group">
+                            <label for="lastname-re" class="form-label mt-2">Lastname</label>
+                            <input type="text" name="lastname" class="form-control" id="lastname-re"
+                                placeholder="Enter lastname" 
+                                formControlName="lastname"
+                                [ngClass]="{'is-invalid': validateFormControl(formUserRegister.controls['lastname'])}">
+                            <div class="text-danger"
+                                *ngIf="validateFormControl(formUserRegister.controls['lastname'])">
+                                {{ getErrorFormControl(formUserRegister.controls['lastname']) }}
+                            </div> 
+                        </div>
+                        <div class="form-group">
+                            <label for="birthday-re" class="form-label mt-2">Birtday</label>
+                            <input type="date" name="birthday" class="form-control" id="birthday-re"
+                                placeholder="Enter birthday" 
+                                formControlName="birthday"
+                                [ngClass]="{'is-invalid': validateFormControl(formUserRegister.controls['birthday'])}">
+                            <div class="text-danger"
+                                *ngIf="validateFormControl(formUserRegister.controls['birthday'])">
+                                {{ getErrorFormControl(formUserRegister.controls['birthday']) }}
+                            </div> 
+                        </div>
+                        <div class="form-group">
+                            <label for="username-re" class="form-label mt-2">Username</label>
+                            <input type="text" name="username" class="form-control" id="username-re"
+                                placeholder="Enter username" 
+                                formControlName="username"
+                                [ngClass]="{'is-invalid': validateFormControl(formUserRegister.controls['username'])}">
+                            <div class="text-danger"
+                                *ngIf="validateFormControl(formUserRegister.controls['username'])">
+                                {{ getErrorFormControl(formUserRegister.controls['username']) }}
+                            </div> 
+                        </div>
+                        <div class="form-group">
+                            <label for="email-re" class="form-label mt-2">Email address</label>
+                            <input type="email" name="email" class="form-control" id="email-re" placeholder="Enter email"
+                                formControlName="email"
+                                [ngClass]="{'is-invalid': validateFormControl(formUserRegister.controls['email'])}">
+                            <div class="text-danger"
+                                *ngIf="validateFormControl(formUserRegister.controls['email'])">
+                                {{ getErrorFormControl(formUserRegister.controls['email']) }}
+                            </div> 
+                        </div>
+                        <div class="form-group">
+                            <label for="password-re" class="form-label mt-2">Password</label>
+                            <input type="password" name="password" class="form-control" id="password-re"
+                                placeholder="Password" 
+                                formControlName="password"
+                                [ngClass]="{'is-invalid': validateFormControl(formUserRegister.controls['password'])}">
+                            <div class="text-danger"
+                                *ngIf="validateFormControl(formUserRegister.controls['password'])">
+                                {{ getErrorFormControl(formUserRegister.controls['password']) }}
+                            </div> 
+                        </div>
 
-                    <a class="link-secondary" (click)="showAuthEvent()">Back to Login</a>
-                    <button type="submit" class="btn btn-primary w-100 mt-2">Register</button>
+                        <a class="link-secondary" (click)="showAuthEvent()">Back to Login</a>
+                        <button type="submit" class="btn btn-primary w-100 mt-2">Register</button>
+                    </fieldset>
                 </form>
             </div>
         </div>

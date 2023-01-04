@@ -5,6 +5,7 @@ import { Subject, takeUntil } from 'rxjs';
 import { UserService } from 'src/app/core/services/user.service';
 import { ErrorHttpI } from 'src/app/models/interfaces/errors/error-http.interface';
 import { ErrorTypeI, ErrorTypes } from 'src/app/models/interfaces/errors/error-type.interface';
+import { UserI } from 'src/app/models/interfaces/user/user.interface';
 
 @Component({
   selector: 'app-minitask-auth-template',
@@ -30,6 +31,7 @@ export class MinitaskAuthTemplateComponent implements OnInit, OnDestroy {
   public formLoad: boolean = false;
 
   public user: any = {};
+  public userIf: boolean = false;
 
   public errorHttp: ErrorHttpI = {};
   public errorIs: boolean = false;
@@ -45,10 +47,13 @@ export class MinitaskAuthTemplateComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.themeDark = localStorage.getItem('landing-theme')? true : false;
+    /* This code is not oficial to auth in this app */
+    this.userIf = localStorage.getItem('user-session')? true : false;
+    if (this.userIf)
+      this._route.navigate(["app/user"])
   }
 
   ngOnDestroy(): void {
-    //this.$subject.next(true);
     this._subject.complete();
     this._subject.unsubscribe();
   }
@@ -71,7 +76,7 @@ export class MinitaskAuthTemplateComponent implements OnInit, OnDestroy {
           this.user = success
         }, (error: any) => {
           this.handlerErrorHttp(error, ErrorTypes.DANGER);
-          this._route.navigate(["app"])
+          this._route.navigate(["app/user"])
         }
       ).add(() => {
         this.formLoad = false;
@@ -85,7 +90,8 @@ export class MinitaskAuthTemplateComponent implements OnInit, OnDestroy {
       this._userService.findUserByEmailAndPassword(this.formUserLogin.value).pipe(takeUntil(this._subject)).subscribe(
         (success: any) => {
           this.user = success;
-          this._route.navigate(["app"])
+          this.addUserLocalStorage(this.user)
+          this._route.navigate(["app/user"])
         }, (error: any) => {
           this.handlerErrorHttp(error, ErrorTypes.DANGER);
         }
@@ -109,6 +115,22 @@ export class MinitaskAuthTemplateComponent implements OnInit, OnDestroy {
 
   public getErrorFormControl = (formControl: any): any => {
     return Object.keys(formControl.errors)
+  }
+
+  /*
+   * @author @moisesarrona
+   * @description This code is not oficial to auth in this app
+   */
+  public addUserLocalStorage = (user: UserI): void => {
+    localStorage.setItem('user-session', JSON.stringify(user));
+  }
+
+  /*
+   * @author @moisesarrona
+   * @description This code is not oficial to auth in this app
+   */
+  public deleteUserLocalStorage = (): void => {
+    localStorage.removeItem('user-session');
   }
 
 }

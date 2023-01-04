@@ -14,10 +14,6 @@ const routes: Routes = [
     path: 'app',
     component: MinitaskTemplateComponent,
     children: [
-      {
-        path: 'user',
-        loadChildren: () => import('./sys-minitask/user/user.module').then(m => m.UserModule)
-      }
     ]
   },
   {

@@ -27,7 +27,7 @@ export class MinitaskAuthTemplateComponent implements OnInit, OnDestroy {
   })
 
   public themeDark: boolean = false;
-  public authShow: boolean = true;
+  public authShow: boolean = false;
   public formLoad: boolean = false;
 
   public user: any = {};
@@ -47,6 +47,7 @@ export class MinitaskAuthTemplateComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.themeDark = localStorage.getItem('landing-theme')? true : false;
+
     /* This code is not oficial to auth in this app */
     this.userIf = localStorage.getItem('user-session')? true : false;
     if (this.userIf)

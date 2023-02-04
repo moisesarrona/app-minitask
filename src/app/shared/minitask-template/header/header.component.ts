@@ -18,6 +18,10 @@ export class HeaderComponent implements OnInit {
     this.headerData = HeaderData.filter(item => item.active === true).reverse();
   }
 
+  /**
+   * Send status to open menu
+   * @param event 
+   */
   public openMenu = (event: any): void => {
     this.menuStatus = !this.menuStatus;
     this.menuEvent.emit(this.menuStatus);

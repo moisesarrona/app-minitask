@@ -19,6 +19,10 @@ export class SidebarComponent implements OnInit {
     this.sidebarData = SidebarData.filter(item => item.active === true);
   }
 
+  /**
+   * Send status to change theme
+   * @param status 
+   */
   public changeTheme = (): void => {
     this.themeStatus = !this.themeStatus;
     this.themeEvent.emit(this.themeStatus);

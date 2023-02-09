@@ -27,7 +27,7 @@ export class MinitaskAuthTemplateComponent implements OnInit, OnDestroy {
   })
 
   public themeDark: boolean = false;
-  public authShow: boolean = false;
+  public authShow: boolean = true;
   public formLoad: boolean = false;
 
   public user: any = {};

@@ -11,14 +11,13 @@ const routes: Routes = [
     loadChildren: () => import('./sys-landing/landing.module').then(m => m.LandingModule)
   },
   {
-    path: 'app',
-    component: MinitaskTemplateComponent,
-    children: [
-    ]
-  },
-  {
     path: 'login',
     component: MinitaskAuthTemplateComponent,
+  },
+  {
+    path: 'app',
+    component: MinitaskTemplateComponent,
+    loadChildren: () => import('./sys-minitask/user/user.module').then(m => m.UserModule),
   },
   {
     path: '**',

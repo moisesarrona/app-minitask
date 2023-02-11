@@ -1,12 +1,12 @@
 # app-minitask
 This is app create to consume the api api-minitas. create and organize your tasks. app status is primitive, I keep writing code.
 
->__v0.3.0__  
+>__v0.4.0__  
 __Author:__ [@moisesarrona](https://github.com/mosesarrona)  
-__Description:__ Login and register to access app
+__Description:__ Migrate Angular version from 13 to 14 
 
 ## Technologies
-- Angular 13.3.0
+- Angular 14.2.12
 - rxjs 7.5.0
 - zone.js 0.11.4
 
@@ -17,7 +17,7 @@ __Description:__ Login and register to access app
 
 ## Requirements
 - Node 16.14.2
-- Cli 13.3.0
+- Cli 14.2.10
 
 ## Setup
 Clone the project from github

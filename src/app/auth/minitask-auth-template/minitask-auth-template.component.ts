@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, FormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
 import { UserService } from 'src/app/core/services/user.service';
@@ -13,7 +13,7 @@ import { UserI } from 'src/app/models/interfaces/user/user.interface';
 })
 export class MinitaskAuthTemplateComponent implements OnInit, OnDestroy {
 
-  public formUserRegister: FormGroup = this._formBuilder.group({
+  public formUserRegister: UntypedFormGroup = this._formBuilder.group({
     name: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(50)]],
     lastname: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(50)]],
     birthday: ['', [Validators.required]],
@@ -21,7 +21,7 @@ export class MinitaskAuthTemplateComponent implements OnInit, OnDestroy {
     email: ['', [Validators.required, Validators.email]],
     password: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(255)]]
   })
-  public formUserLogin: FormGroup = this._formBuilder.group({
+  public formUserLogin: UntypedFormGroup = this._formBuilder.group({
     email: ['', [Validators.required, Validators.email]],
     password: ['', [Validators.required]]
   })
@@ -40,7 +40,7 @@ export class MinitaskAuthTemplateComponent implements OnInit, OnDestroy {
   public _subject = new Subject();
 
   constructor(
-    private _formBuilder: FormBuilder,
+    private _formBuilder: UntypedFormBuilder,
     private _userService: UserService,
     private _route: Router
   ) { }

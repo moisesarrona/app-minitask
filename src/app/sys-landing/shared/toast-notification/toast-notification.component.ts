@@ -16,6 +16,9 @@ export class ToastNotificationComponent implements OnInit {
     this.showToast();
   }
 
+  /**
+   * Show toast when start landing page
+   */
   public showToast = (): void => {
     setTimeout(() => {
       this.isVisible = true;

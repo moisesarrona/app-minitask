@@ -19,6 +19,10 @@ export class HeaderComponent implements OnInit {
     this.menuData = HeaderData;
   }
 
+  /**
+   * Send status to change theme
+   * @param status 
+   */
   public changeTheme = ():void => {
     this.themeStatus = !this.themeStatus;
     this.themeSelection.emit(this.themeStatus);

@@ -20,6 +20,10 @@ export class LandingTemplateComponent implements OnInit {
     this.themeDark = localStorage.getItem('landing-theme')? true : false
   }
 
+  /**
+   * Resive status to change theme
+   * @param status 
+   */
   public changeTheme = (data: boolean): any => {
     data? localStorage.setItem('landing-theme', 'dark') : localStorage.removeItem('landing-theme')
     this.themeDark = data

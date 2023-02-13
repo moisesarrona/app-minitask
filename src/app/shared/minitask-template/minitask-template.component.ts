@@ -21,6 +21,7 @@ export class MinitaskTemplateComponent implements OnInit {
 
   ngOnInit(): void {
     this.themeStatus = localStorage.getItem('landing-theme')? true : false
+
     /* This code is not oficial to auth in this app */
     this.userIf = localStorage.getItem('user-session')? !true : !false;
     if (this.userIf)
@@ -31,6 +32,9 @@ export class MinitaskTemplateComponent implements OnInit {
     this.initTooltip();
   }
 
+  /**
+   * Start Tooltip for menu
+   */
   public initTooltip = (): void => {
     var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
     var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
@@ -38,11 +42,19 @@ export class MinitaskTemplateComponent implements OnInit {
     }) 
   }
 
+  /**
+   * Resive status to change theme
+   * @param status 
+   */
   public changeTheme = (status: boolean) => {
     status? localStorage.setItem('landing-theme', 'dark') : localStorage.removeItem('landing-theme')
     this.themeStatus = status
   }
 
+  /**
+   * Resive status to open menu
+   * @param status 
+   */
   public openMenu = (status: boolean) => {
     this.menuStatus = status;
   }

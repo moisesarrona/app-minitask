@@ -4,7 +4,7 @@ export const UserInfo = {
     username: 'moisesarrona',
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, quisquam officiis ex quia qui tempore',
     link: 'github.com/moisesarrona',
-    image: 'https://yt3.ggpht.com/ytc/AKedOLQGFySyCTgTmqmhMqrZFn63se1CdGgeOhvqHAkhE54=s900-c-k-c0x00ffffff-no-rj',
+    image: 'https://avatars.githubusercontent.com/u/57106162?v=4',
     counter: [
         {
             title: 'Tasks',

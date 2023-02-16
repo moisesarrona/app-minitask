@@ -8,7 +8,7 @@
     <div class="row justify-content-center align-items-center h-100 w-100 m-0">
         <div class="card col-md-6 col-sm-10 py-4 px-4 overflow-auto" style="max-height: 90%;">
             <!-- login -->
-            <div class="form-login" [ngClass]="{'d-none': !authShow}">
+            <div class="form-login" [ngClass]="{'d-none': !formShow}">
                 <form [formGroup]="formUserLogin" (ngSubmit)="findUserLogin()">
                     <fieldset [disabled]="formLoad">
                         <h2>Login</h2>
@@ -43,7 +43,7 @@
             </div>
 
             <!-- register -->
-            <div class="form-register" [ngClass]="{'d-none': authShow}">
+            <div class="form-register" [ngClass]="{'d-none': formShow}">
                 <form [formGroup]="formUserRegister" (ngSubmit)="createRegister()">
                     <fieldset [disabled]="formLoad">
                         <h2>Register</h2>

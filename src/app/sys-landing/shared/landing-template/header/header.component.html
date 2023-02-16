@@ -12,7 +12,7 @@
             </ul>
             <div class="d-flex">
                 <a class="nav-link"
-                    (click)="changeTheme()">
+                    (click)="changeThemeEmit()">
                     <i [ngClass]="{'bi bi-brightness-high-fill':  themeStatus, 'bi bi-moon-fill': !themeStatus}"></i>
                 </a>
                 <a class="nav-link" routerLink="/login">

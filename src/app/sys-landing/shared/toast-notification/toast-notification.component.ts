@@ -8,7 +8,7 @@ import { ToastI } from '../../models/interface/toast.interface';
 export class ToastNotificationComponent implements OnInit {
   @Input() data: ToastI = {}
 
-  public isVisible = false;
+  public toastVisible = false;
 
   constructor() { }
 
@@ -21,9 +21,9 @@ export class ToastNotificationComponent implements OnInit {
    */
   public showToast = (): void => {
     setTimeout(() => {
-      this.isVisible = true;
+      this.toastVisible = true;
       setTimeout(() => {
-        this.isVisible = false;
+        this.toastVisible = false;
       }, 5500);
     }, 800);
   }

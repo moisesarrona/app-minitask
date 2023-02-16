@@ -23,7 +23,7 @@ export class HeaderComponent implements OnInit {
    * Send status to change theme
    * @param status 
    */
-  public changeTheme = ():void => {
+  public changeThemeEmit = ():void => {
     this.themeStatus = !this.themeStatus;
     this.themeSelection.emit(this.themeStatus);
   }

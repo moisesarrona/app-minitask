@@ -22,7 +22,7 @@ export class HeaderComponent implements OnInit {
    * Send status to open menu
    * @param event 
    */
-  public openMenu = (event: any): void => {
+  public openMenuEmit = (event: any): void => {
     this.menuStatus = !this.menuStatus;
     this.menuEvent.emit(this.menuStatus);
   }

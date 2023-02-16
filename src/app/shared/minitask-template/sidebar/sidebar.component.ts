@@ -23,7 +23,7 @@ export class SidebarComponent implements OnInit {
    * Send status to change theme
    * @param status 
    */
-  public changeTheme = (): void => {
+  public changeThemeEmit = (): void => {
     this.themeStatus = !this.themeStatus;
     this.themeEvent.emit(this.themeStatus);
   }

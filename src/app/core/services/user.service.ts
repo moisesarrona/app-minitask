@@ -35,4 +35,13 @@ export class UserService extends BaseService {
     return this.httpPostMethod(`${this.urlService}/findUserByEmailAndPassword`, user);
   }
 
+  /**
+   * Service to update user
+   * @param user 
+   * @returns 
+   */
+  public updateUser = (user: UserI): Observable<UserI> => {
+    return this.httpPutMethod(`${this.urlService}/updatedUser`, user);
+  }
+
 }

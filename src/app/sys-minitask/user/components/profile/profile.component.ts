@@ -2,12 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Subject, takeUntil } from 'rxjs';
 import { UserService } from 'src/app/core/services/user.service';
+import { BaseComponent } from 'src/app/shared/components/base/base.component';
 
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
 })
-export class ProfileComponent implements OnInit {
+export class ProfileComponent extends BaseComponent implements OnInit {
 
   public formUserEdit: FormGroup = this._formBuilder.group({
     name: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(50)]],
@@ -18,7 +19,6 @@ export class ProfileComponent implements OnInit {
   })
 
   public formUserVisible: boolean = false
-
   public formLoad: boolean = false;
 
   public userData: any = {}
@@ -28,8 +28,10 @@ export class ProfileComponent implements OnInit {
 
   constructor(
     private _formBuilder: FormBuilder,
-    private _userService: UserService
-  ) { }
+    private _userService: UserService,
+  ) {
+    super()
+  }
 
   ngOnInit(): void {
     this.userData = JSON.parse(localStorage.getItem("user-session") || '{}');
@@ -69,8 +71,6 @@ export class ProfileComponent implements OnInit {
         this.formLoad = false
         this.formUserVisible = false
       })
-  }
-
   }
 
 }

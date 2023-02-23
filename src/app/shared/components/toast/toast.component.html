@@ -1,0 +1,25 @@
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="liveToast" class="toast show fade"  role="alert" aria-live="assertive" aria-atomic="true">
+        <!--[ngClass]="{'show fade': show}"-->
+        <div class="toast-header">
+            <div class="me-2" ngClass="text-{{ type }}">
+                <div [ngSwitch]="type">
+                    <div *ngSwitchCase="'success'"> <i class="bi bi-check-square-fill"></i> </div>
+                    <div *ngSwitchCase="'warning'"> <i class="bi bi-exclamation-triangle-fill"></i> </div>
+                    <div *ngSwitchCase="'danger'"> <i class="bi bi-x-octagon-fill"></i> </div>
+                    <div *ngSwitchCase="'info'"> <i class="bi bi-info-square"></i> </div>
+                    <div *ngSwitchDefault> <i class="bi bi-bell-fill"></i> </div>
+                </div>
+            </div>
+            
+            <strong class="me-auto">
+                {{ title }}
+            </strong>
+            
+            <i class="bi bi-x-lg ps-3" (click)="closeToast()"></i>
+        </div>
+        <div class="toast-body">
+            {{ message }}
+        </div>
+    </div>
+</div>

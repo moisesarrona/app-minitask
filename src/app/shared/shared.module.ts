@@ -9,6 +9,7 @@ import { MinitaskAuthTemplateComponent } from '../auth/minitask-auth-template/mi
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BaseComponent } from './components/base/base.component';
+import { ToastComponent } from './components/toast/toast.component';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { BaseComponent } from './components/base/base.component';
     SidebarComponent,
     MinitaskAuthTemplateComponent,
     BaseComponent,
+    ToastComponent,
   ],
   imports: [
     CommonModule,

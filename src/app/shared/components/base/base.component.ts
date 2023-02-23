@@ -13,7 +13,6 @@ export class BaseComponent {
    */
   public getErrorFormControl(formControl: any): string[] | null {
     const control = formControl;
-    console.log(control)
     if (control?.errors) {
       const errorNames = Object.keys(control.errors);
       return errorNames.map(nameError => this.getErrorText(nameError, control.errors![nameError], control._composedAsyncValidatorFn?.name));

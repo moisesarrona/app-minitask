@@ -1,0 +1,70 @@
+<p>profile-edit works!</p>
+
+<form [formGroup]="formUserEdit" (ngSubmit)="updateUserData()" class="text-left">
+    <fieldset [disabled]="formLoad">
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label for="name" class="form-label mt-2">Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter name"
+                    formControlName="name">
+                <div class="text-danger small"
+                    *ngIf="getErrorFormControl(formUserEdit.get('name'))">
+                    {{ getErrorFormControl(formUserEdit.get('name')) }}
+                </div>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="lastname" class="form-label mt-2">Lastname</label>
+                <input type="text" class="form-control" id="lastname"
+                    placeholder="Enter lastname" formControlName="lastname">
+                <div class="text-danger small"
+                    *ngIf="getErrorFormControl(formUserEdit.get('lastname'))">
+                    {{ getErrorFormControl(formUserEdit.get('lastname')) }}
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="description" class="form-label mt-2">Description</label>
+            <input type="text" class="form-control" id="description"
+                placeholder="Enter description" formControlName="description">
+            <div class="text-danger small"
+                *ngIf="getErrorFormControl(formUserEdit.get('description'))">
+                {{ getErrorFormControl(formUserEdit.get('description')) }}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label for="link" class="form-label mt-2">Link</label>
+                <input type="link" class="form-control" id="link" placeholder="Enter link"
+                    formControlName="link">
+                <div class="text-danger small"
+                    *ngIf="getErrorFormControl(formUserEdit.get('link'))">
+                    {{ getErrorFormControl(formUserEdit.get('link')) }}
+                </div>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="phone" class="form-label mt-2">Phone</label>
+                <input type="text" class="form-control" id="phone" placeholder="Enter phone"
+                    formControlName="phone">
+                <div class="text-danger small"
+                    *ngIf="getErrorFormControl(formUserEdit.get('phone'))">
+                    {{ getErrorFormControl(formUserEdit.get('phone')) }}
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <a class="col-md-6 btn btn-secondary" (click)="modeEditUser()">
+                Cancel
+            </a>
+
+            <button class="col-md-6 btn btn-primary" type="submit"
+                [disabled]="!formUserEdit.valid">
+                Save
+            </button>
+        </div>
+    </fieldset>
+</form>

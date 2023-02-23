@@ -67,9 +67,11 @@
 }
 
 /* --- toast --- */
-.dark-mode .toast,
-.dark-mode .toast-header {
-    background-color: var(--color-secondary-rgba) !important;
+.toast,
+.toast-header {
+    background-color: var(--color-primary) !important;
+    border: 1px solid #343a40 !important;
+    
 }
 
 /* --- alert --- */

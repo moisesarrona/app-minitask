@@ -67,11 +67,11 @@ export class ProfileEditComponent extends BaseComponent implements OnInit {
         (success: any) => {
           this.inDataUser = success
           localStorage.setItem('user-session', JSON.stringify(this.inDataUser));
-          this._toastService.showToast('success', 'Success', 'Your data is update', 30000000)
+          this._toastService.showToast('success', 'Success', 'Your data is update', 3000)
         },
         (error: any) => {
           console.log(error)
-          this._toastService.showToast('danger', 'Error', 'Your data is not update', 30000000)
+          this._toastService.showToast('danger', 'Error', 'Your data is not update', 3000)
         }
       ).add(() => {
         this.formLoad = false

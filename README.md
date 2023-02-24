@@ -1,9 +1,9 @@
 # app-minitask
 This is app create to consume the api api-minitas. create and organize your tasks. app status is primitive, I keep writing code.
 
->__v0.4.0__  
+>__v0.5.0__  
 __Author:__ [@moisesarrona](https://github.com/mosesarrona)  
-__Description:__ Migrate Angular version from 13 to 14 
+__Description:__ Update user info, create toast to notification
 
 ## Technologies
 - Angular 14.2.12

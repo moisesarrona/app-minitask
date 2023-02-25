@@ -17,12 +17,31 @@ export class UserService extends BaseService {
     super(httpClient)
   }
 
+  /**
+   * Service to create user
+   * @param user 
+   * @returns 
+   */
   public createdUser = (user: UserI): Observable<UserI> => {
     return this.httpPostMethod(`${this.urlService}/createdUser`,user);
   }
 
+  /**
+   * Service to find user by email and password (login)
+   * @param user 
+   * @returns 
+   */
   public findUserByEmailAndPassword = (user: any) => {
     return this.httpPostMethod(`${this.urlService}/findUserByEmailAndPassword`, user);
+  }
+
+  /**
+   * Service to update user
+   * @param user 
+   * @returns 
+   */
+  public updateUser = (user: UserI): Observable<UserI> => {
+    return this.httpPutMethod(`${this.urlService}/updatedUser`, user);
   }
 
 }

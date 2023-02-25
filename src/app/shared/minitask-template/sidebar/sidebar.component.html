@@ -17,7 +17,7 @@
         <ul class="sidebar__menu">
             <li class="sidebar__menu--item"
             data-bs-toggle="tooltip" data-bs-placement="right" title="Theme">
-                <a (click)="changeTheme()">
+                <a (click)="changeThemeEmit()">
                     <i [ngClass]="{' bi-brightness-high':  themeStatus, 'bi bi-moon': !themeStatus}"></i>
                 </a>
             </li>

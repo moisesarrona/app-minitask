@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { UntypedFormBuilder, FormControl, UntypedFormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
 import { UserService } from 'src/app/core/services/user.service';
@@ -27,7 +27,8 @@ export class MinitaskAuthTemplateComponent implements OnInit, OnDestroy {
   })
 
   public themeDark: boolean = false;
-  public authShow: boolean = true;
+  
+  public formShow: boolean = true;
   public formLoad: boolean = false;
 
   public user: any = {};
@@ -47,6 +48,7 @@ export class MinitaskAuthTemplateComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.themeDark = localStorage.getItem('landing-theme')? true : false;
+
     /* This code is not oficial to auth in this app */
     this.userIf = localStorage.getItem('user-session')? true : false;
     if (this.userIf)
@@ -58,32 +60,47 @@ export class MinitaskAuthTemplateComponent implements OnInit, OnDestroy {
     this._subject.unsubscribe();
   }
 
+  /** 
+   * show form login or register
+   * @return void
+   */
   public showAuthEvent = ():void => {
-    this.authShow = !this.authShow
+    this.formShow = !this.formShow
   }
 
+  /**
+   * Change theme dark or light
+   * @param data 
+   * @returns
+   */
   public changeTheme = (data: boolean): any => {
     data? localStorage.setItem('landing-theme', 'dark') : localStorage.removeItem('landing-theme')
     this.themeDark = data
   }
 
-  public createRegister = (): any => {
+  /**
+   * Create user and give access
+   */
+  public createRegister = (): void => {
     this.formLoad = true;
     this.formUserRegister.markAllAsTouched()
     if (this.formUserRegister.valid)
       this._userService.createdUser(this.formUserRegister.value).pipe(takeUntil(this._subject)).subscribe(
         (success: any) => {
-          this.user = success
+          this.user = success;
+          this._route.navigate(["app/user"])
         }, (error: any) => {
           this.handlerErrorHttp(error, ErrorTypes.DANGER);
-          this._route.navigate(["app/user"])
         }
       ).add(() => {
         this.formLoad = false;
       })
   }
 
-  public findUserLogin = (): any => {
+  /**
+   * Find user for give access
+   */
+  public findUserLogin = (): void => {
     this.formLoad = true;
     this.formUserLogin.markAllAsTouched()
     if (this.formUserLogin.valid)
@@ -100,6 +117,11 @@ export class MinitaskAuthTemplateComponent implements OnInit, OnDestroy {
       })
   }
 
+  /**
+   * handler error for service response 
+   * @param error 
+   * @param errorType 
+   */
   public handlerErrorHttp = (error: ErrorHttpI, errorType: string): void =>  {
     this.errorIs = true;
     this.errorHttp = error;
@@ -109,25 +131,38 @@ export class MinitaskAuthTemplateComponent implements OnInit, OnDestroy {
     }, 3500);
   }
 
+  /**
+   * Validate form control and return validation status
+   * @param formControl 
+   * @returns
+   */
   public validateFormControl = (formControl: any): boolean => {
     return (formControl.invalid && (formControl.dirty || formControl.touched))? true : false;
   }
 
+  /**
+   * Get errors from form group
+   * @param formControl 
+   * @returns
+   */
   public getErrorFormControl = (formControl: any): any => {
     return Object.keys(formControl.errors)
   }
 
-  /*
-   * @author @moisesarrona
-   * @description This code is not oficial to auth in this app
+
+  /* This code block is'nt oficial */
+
+
+  /**
+   * Add user localstorage when this logge
+   * @param user 
    */
   public addUserLocalStorage = (user: UserI): void => {
     localStorage.setItem('user-session', JSON.stringify(user));
   }
 
-  /*
-   * @author @moisesarrona
-   * @description This code is not oficial to auth in this app
+  /**
+   * Delete user from localstorage
    */
   public deleteUserLocalStorage = (): void => {
     localStorage.removeItem('user-session');

@@ -67,9 +67,11 @@
 }
 
 /* --- toast --- */
-.dark-mode .toast,
-.dark-mode .toast-header {
-    background-color: var(--color-secondary-rgba) !important;
+.toast,
+.toast-header {
+    background-color: var(--color-primary) !important;
+    border: 1px solid #343a40 !important;
+    
 }
 
 /* --- alert --- */
@@ -190,7 +192,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 2rem 0rem 3rem 0rem;
+    padding: 2rem 0rem 1.9rem 0rem;
 }
 
 .header__search {

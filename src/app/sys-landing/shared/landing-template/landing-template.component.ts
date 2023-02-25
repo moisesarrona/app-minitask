@@ -8,7 +8,8 @@ import { ToastI } from '../../models/interface/toast.interface';
 export class LandingTemplateComponent implements OnInit {
 
   public themeDark: boolean = false;
-  public dataToast: ToastI = {
+
+  public toastData: ToastI = {
     title: "Welcome!",
     description: "This landing page contains secrets, discover them, so be careful!",
     time: new Date()

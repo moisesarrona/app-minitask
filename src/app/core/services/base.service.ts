@@ -17,6 +17,12 @@ export class BaseService {
     private httpClient: HttpClient
   ) { }
 
+  /**
+   * Method get for any service, get url and params
+   * @param url 
+   * @param param 
+   * @returns 
+   */
   protected httpGetMethod = (url: string, param?: any): Observable<any> => {
     let params = '';
     if (param)
@@ -27,16 +33,33 @@ export class BaseService {
       .pipe(catchError(this.handlerError))
   }
 
+  /**
+   * Method post for any service, get url and data
+   * @param url 
+   * @param data 
+   * @returns 
+   */
   protected httpPostMethod = (url: string, data: any): Observable<any> => {
     return this.httpClient.post(`${API_END_POINT}/${url}`, data)
       .pipe(catchError(this.handlerError))
   }
 
+  /**
+   * Method put for any service, get url and data
+   * @param url 
+   * @param data 
+   * @returns 
+   */
   protected httpPutMethod = (url: string, data: any): Observable<any> => {
     return this.httpClient.put(`${API_END_POINT}/${url}`, data)
       .pipe(catchError(this.handlerError))
   }
 
+  /**
+   * Handler error for response in the services
+   * @param error 
+   * @returns 
+   */
   private handlerError = (error: HttpErrorResponse): Observable<any> => {
     if (error.error instanceof ErrorEvent) {
       this.errorHttp = {

@@ -1,7 +1,7 @@
 # app-minitask
 This is app create to consume the api api-minitas. create and organize your tasks. app status is primitive, I keep writing code.
 
->__v0.5.0__  
+>__v0.5.1__  
 __Author:__ [@moisesarrona](https://github.com/mosesarrona)  
 __Description:__ Update user info, create toast to notification
 
